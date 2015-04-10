@@ -1,0 +1,115 @@
+
+/*------------------------------------*\
+	#COVER
+\*------------------------------------*/
+
+.cover{
+	width: 100%; height: 100vh;
+	background: no-repeat center center; background-size: cover;
+	position: relative;
+}
+
+.store__info{
+	top: 80%;
+	color: @light;
+}
+
+.store-description{
+	display: none;
+	width: 64%;
+	margin: 0 auto;
+}
+
+.cover img{
+	display: block;
+	width: 150px;
+}
+
+.scroll-down{
+	font-size: 20px;
+	color: @light;
+	.transition;
+
+	&:hover{
+		bottom: 4px;
+		font-size: 25px;
+	}
+}
+
+
+
+
+
+/*------------------------------------*\
+    #SMALL
+\*------------------------------------*/
+@media (min-width: @small) {
+
+	.store__info{
+		top: 70%;
+	}
+
+
+}
+
+
+
+
+/*------------------------------------*\
+    #SMALL & LANDSCAPE
+\*------------------------------------*/
+@media (min-width: @xmall) and (orientation: landscape) {
+
+	h1{
+		top: 45% !important;
+	}
+
+	.store__info{
+		top: 82%;
+	}
+
+
+	.store-name{
+		margin-bottom: 0;
+	}
+
+}
+
+
+
+
+/*------------------------------------*\
+    #MEDIUM
+\*------------------------------------*/
+@media (min-width: @medium) {
+
+	.store__info{
+		top: 74%;
+	}
+
+	.store-description{
+		display: block;
+		width: 75%;
+	}
+
+	.scroll-down{
+		font-size: 40px;
+	}
+
+
+}
+
+
+
+
+/*------------------------------------*\
+    #LARGE
+\*------------------------------------*/
+@media (min-width: @large) {
+
+	.store-description{
+		display: block;
+		width: 64%;
+	}
+
+}

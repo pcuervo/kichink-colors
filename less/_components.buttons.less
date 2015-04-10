@@ -1,0 +1,80 @@
+/*------------------------------------*\
+	#BUTTONS
+\*------------------------------------*/
+.ribbon, .button{
+	padding: 8px 8px 6px 8px;
+	.font( 1em, 1, 400, 'proxima nova' ); text-align: center; text-transform: uppercase; text-decoration: none; color: @light;
+	.transition;
+}
+
+
+
+
+/*------------------------------------*\
+	#STYLES
+\*------------------------------------*/
+.button--hollow{
+	border: 3px solid @light;
+	background: transparent;
+}
+
+
+.button__share{ padding: @unidad (@unidad/4); }
+.button__share i{ font-size: 16px; }
+.button__share span {
+	.font(20px, 1, 100); text-overflow: ellipsis; //text-align: right;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+
+
+
+/*------------------------------------*\
+	#SIZES
+\*------------------------------------*/
+.button--small{
+	padding: 6px 6px 4px 6px; border-width: 2px;
+	.font( 0.9em, 1 );
+}
+
+.button--large{
+	padding: 10px 10px 8px 10px;
+	.font( 1.6em, 1.3 ); letter-spacing: 1px;
+}
+
+
+
+
+/*------------------------------------*\
+	#COLORES
+\*------------------------------------*/
+
+.button--dark{
+	background: @dark;
+	color: @light;
+
+	&:hover, &.selected {
+		background: darken( @dark, 5%);
+		color: @light;
+	}
+
+}
+
+.button--hollow.button--dark{
+	border-color: @dark;
+	color: @dark;
+	background: none;
+
+	&:hover, &.selected {
+		background: @dark;
+		color: @light;
+	}
+
+	&.disabled{
+		pointer-events: none;
+		cursor: default;
+		border-color: lighten(@dark, 50%);
+		color: lighten(@dark, 50%);
+	}
+}

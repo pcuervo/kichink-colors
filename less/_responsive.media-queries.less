@@ -1,0 +1,80 @@
+/*------------------------------------*\
+    #BREAKPOINTS
+\*------------------------------------*/
+@xmall: 	25em;
+@small: 	40.063em;
+@medium: 	64.063em;
+@large: 	90.063em;
+@xlarge: 	120.063em;
+
+
+
+
+
+/*------------------------------------*\
+    #VISIBILITY
+\*------------------------------------*/
+
+/**
+ * Xmall
+**/
+.shown--xmall{ display: block !important; }
+.hidden--xmall{ display: none !important; }
+
+.hidden--medium{ display: none !important; }
+.shown--medium{ display: none !important; }
+.shown--medium--inline-block{ display: none !important; }
+.shown--large{ display: none !important; }
+
+/**
+ * Small
+**/
+@media (min-width: @small) {
+	.shown--small{ }
+	.hidden--small{ }
+}
+
+/**
+ * Medium
+**/
+@media (min-width: @medium) {
+
+	.shown--small{ display: none !important; }
+
+	.shown--medium{ display: block !important; }
+	.shown--medium--inline-block{ display: inline-block !important; }
+
+	.hidden--medium{ display: none !important; }
+
+}
+
+/**
+ * Large
+**/
+@media (min-width: @large) {
+
+
+	.shown--large{ display: block !important; }
+	.hidden--large{ display: none !important; }
+
+}
+
+/**
+ * Xlarge
+**/
+@media (min-width: @xlarge) {
+
+}
+
+
+
+/**
+ * Retina
+**/
+@media  only screen and (-webkit-min-device-pixel-ratio: 2),
+	only screen and (min--moz-device-pixel-ratio: 2),
+	only screen and (-o-min-device-pixel-ratio: 2/1),
+	only screen and (min-device-pixel-ratio: 2),
+	only screen and (min-resolution: 192dpi),
+	only screen and (min-resolution: 2dppx) {
+}

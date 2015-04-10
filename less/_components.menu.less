@@ -1,0 +1,243 @@
+/*------------------------------------*\
+	#GENERAL
+\*------------------------------------*/
+
+h1 img{
+	display: block;
+	width: 60px;
+}
+
+.menu__item{
+	height: 55px
+}
+.menu__item > a{
+	display: inline-block;
+	font-size: 18px; line-height: 60px;
+	text-decoration: none;
+	position: relative;
+}
+.menu__item a i{
+	font-size: 2em;
+}
+
+.badge{
+	vertical-align: initial;
+	padding: 3px 5px !important; border-radius: 50% !important;
+	font-size: 10px !important; font-weight: normal !important;
+	position: absolute; top: 18px; right: 0;
+}
+
+.badge.urgent{
+	background: @highlight !important;
+}
+
+
+.shopping-cart{
+	top: 40px;
+}
+.shopping-cart:after{
+	right: 20px;
+}
+
+
+
+/*------------------------------------*\
+	#HOME
+\*------------------------------------*/
+.body-home{
+
+	.menu__item > a{
+		color: @light;
+	}
+
+	.badge{
+		background: @light; color: @dark;
+	}
+
+}
+
+
+
+/*------------------------------------*\
+	#SINGLE
+\*------------------------------------*/
+.body-single{
+
+	.menu__item a{
+		color: @dark;
+	}
+
+	.badge{
+		background: @dark; color: @light;
+	}
+
+}
+
+
+
+
+
+/*------------------------------------*\
+	#SIDR
+\*------------------------------------*/
+.sidr{
+	display:none;
+	width:260px;
+	position:absolute; position:fixed; top:0; height:100%;
+	z-index:999999;
+	overflow-x:none;overflow-y:auto;
+}
+
+
+
+
+/*------------------------------------*\
+	#Drill Down Menu Style
+\*------------------------------------*/
+#menu{
+	left: 0 !important;
+}
+
+#menu label {
+	padding: 0 0.25em;
+	font: 3.125em/1.375em Arial;
+}
+#menu .sub-nav .toggle {
+	padding: 0 0.3125em;
+	font: 2em/2em Arial;
+	top: 0;
+}
+#header label:hover, #menu label:hover {
+	color: #ccc;
+}
+#main-nav-check, #menu .sub-nav-check {
+	position:absolute;
+	top: -9999px;
+	left: -9999px;
+}
+.toggle {
+	color: @light;
+}
+#menu, #menu .sub-nav {
+	position:absolute;
+	top:0;
+	bottom:0;
+	width:260px;
+	background: @dark;
+	z-index:9999;
+	left:-260px;
+}
+#menu, #menu .sub-nav {
+	-webkit-transform:translate(0,0);
+	-ms-transform:translate(0,0);
+	transform:translate(0,0);
+	-webkit-transition:-webkit-transform .25s ease;
+	transition:transform .25s ease;
+}
+#menu ul {
+	padding: 0; border-top:1px solid #444; margin: 0;
+	background: @dark;
+	text-decoration:none; line-height:2.75em;
+	list-style:none;
+}
+#menu li {
+	border-bottom:1px solid #444;
+}
+#menu li a {
+	display:block;
+	font-size:0.875em;
+	padding-left:1.5em;
+	color:#fff;
+	text-decoration:none;
+}
+#menu li a:hover, #menu .toggle-sub:hover {
+	background:#333;
+}
+#menu .sub-nav {
+	margin-top:-1px;
+}
+#menu .sub-heading {
+	padding-left:1.3125em;
+	color:#999;
+}
+#menu .sub-heading:before {
+	content:"";
+	display:block;
+	height:1px;
+	width:260px;
+	margin-left:-1.3125em;
+	background:#444;
+}
+#menu .toggle-sub {
+	font:bold 1em/2.75em Arial;
+	color:#fff;
+	background: @dark;
+	float:right;
+	margin-top:-2.75em;
+	width:2.25em;
+	border-left:1px solid #444;
+	cursor:pointer;
+	text-align:center;
+}
+.container, #menu, #menu .sub-nav, .close-all {
+	-webkit-transform:translate3d(0,0,0);
+	} /* http://davidwalsh.name/translate3d */
+
+/* #### - corrects 'unfixing' bug in Safari - uncomment if you have position:fixed elements inside .container - #### */
+/* @media screen and (-webkit-min-device-pixel-ratio:0) { .container { -webkit-transform:none !important } } */
+
+/* #### - extra css for js enhancement - #### */
+#menu .close-all {
+	display:none;
+}
+.js #menu .close-all {
+	display:inline;
+}
+.js #menu .toggle {
+	top:0;
+	z-index:9999;
+}
+.js #menu .sub-nav .toggle {
+	left:0.15em;
+	width:1em;
+}
+
+/* #### - define ids of animated container, menu and sub-menus here - #### */
+#main-nav-check:checked ~ .container,
+#main-nav-check:checked ~ #menu,
+#menu .sub-nav-check:checked ~ #fof-sub,
+#menu .sub-nav-check:checked ~ #fof-portfolio-sub,
+#menu .sub-nav-check:checked ~ #fof-portfolio-graphics-sub,
+#menu .sub-nav-check:checked ~ #fof-services-sub,
+#menu .sub-nav-check:checked ~ #fof-services-seo-sub,
+#menu .sub-nav-check:checked ~ #fast-apps-sub,
+#menu .sub-nav-check:checked ~ #jemcon-sub,
+#menu .sub-nav-check:checked ~ #jemcon-previous-sub {
+	-webkit-transform:translate(260px,0); -ms-transform:translate(260px,0); transform:translate(260px,0)
+}
+
+
+
+/*------------------------------------*\
+    #MEDIUM
+\*------------------------------------*/
+@media (min-width: @medium) {
+
+	.menu__item{
+		height: 75px
+	}
+
+	.menu__item a{
+		margin-right: 4px;
+		font-size: 13px;
+	}
+
+	.menu__item > a{
+		line-height: 80px;
+	}
+
+	.badge{
+		top: 10px; right: -10px;
+	}
+
+}
