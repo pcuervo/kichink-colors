@@ -4,7 +4,7 @@
 \*------------------------------------*/
 
 .cover{
-	width: 100%; height: 100vh;
+	width: 100%; height: calc( ~'100vh - 120px' );
 	background: no-repeat center center; background-size: cover;
 	position: relative;
 }
@@ -58,7 +58,7 @@
 /*------------------------------------*\
     #SMALL & LANDSCAPE
 \*------------------------------------*/
-@media (min-width: @xmall) and (orientation: landscape) {
+@media (min-width: @small) and (orientation: landscape) {
 
 	h1{
 		top: 45% !important;

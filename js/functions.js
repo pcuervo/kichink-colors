@@ -6,12 +6,6 @@
 			#ON LOAD
 		\*------------------------------------*/
 
-		/**
-		* sidr
-		**/
-		$('.menu').sidr({
-			name: 'sidr'
-		});
 
 
 
@@ -47,27 +41,24 @@ function itemsExist(){
 		var itemsLenght = $('.product-grid .item').length;
 
 		if ( itemsLenght > 0 ){
-			runMasonry('.product-grid', '.item');
+
+			// var options = {
+			// 	//exclude: [ 'rgb(0,0,0)', 'rgba(255,255,255)', 'rgb(255,255,255)' ],
+			// 	parent: '.fake-product-grid .item',
+			// 	selector: '.fake-product-grid .item img'
+			// };
+			// //$.adaptiveBackground.run(options);
+			// $.adaptiveBackground.run(options, {
+			//   success: function($img, data) {
+			//     console.log('Success!', $img, data);
+			//   }
+			// });
+
 			clearInterval(interval);
 		}
 
 	}, 200);
 
-}
-
-
-/**
-* Masonry layout for product grid
-**/
-function runMasonry(container, item){
-	var $container = $(container).masonry();
-	$container.imagesLoaded( function() {
-		$container.masonry({
-			itemSelector: item
-		});
-		$container.masonry( 'reloadItems' );
-		$container.masonry( 'layout' );
-	});
 }
 
 

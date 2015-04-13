@@ -2,7 +2,9 @@
 	$site_url 				= 'http://www.airesdecampo.com/tienda/';
 	$store 					= new stdClass();
 	$item 					= new stdClass();
-	$store->id 				= 148;
+	$store->id 				= 3829;
+	//Mi tu 				= 148
+	//Tony Delfinos 		= 3829
 	$store->name 			= "ALEXIA ULIBARRI";
 	$store->description 	= "Simona FW14";
 	$store->logo 			= "images/logo-tienda.jpg";
@@ -37,6 +39,9 @@
 		<meta property="og:site_name" content="<?php echo $store->name; ?> - Kichink!"/>
 		<meta property="og:image" content="<?php echo $og_images; ?>" />
 
+		<!-- Google Fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
+
 		<!-- Lo requiere Kichink! -->
 		<link rel="stylesheet" type="text/css" href="//www.kichink.com/v2/themes/css/searchbox.css" media="screen"/>
 		<link rel="stylesheet" type="text/css" href="//www.kichink.com/v2/themes/css/shoppingcart.css" />
@@ -55,83 +60,65 @@
 		<!--[if lt IE 9]>
 			<p class="chromeframe">Estás usando una versión <strong>vieja</strong> de tu explorador. Por favor <a href="http://browsehappy.com/" target="_blank"> actualiza tu explorador</a> para tener una experiencia completa.</p>
 		<![endif]-->
-		<div id="sidr" class="[ sidr ]">
-			<div id="menu">
-				<ul>
-					<div class="[ shown--small ]">
-						<li>
-							<a href="#" class="">
-								<i class="[ icon-lang ]"></i> Idioma/Moneda
-							</a>
-						</li>
-						<li>
-							<a href="#" class="">
-								<i class="[ icon-login ]"></i> Login
-							</a>
-						</li>
-						<li>
-							<a href="mailto:soporte@kichink.com" class="">
-								<i class="[ icon-help ]"></i> Ayuda
-							</a>
-						</li>
-					</div><!-- shown--small -->
-				</ul>
-			</div><!-- closing "#menu" -->
-		</div><!-- sidr -->
 		<div class="[ container ]">
 			<header class="[ ]">
-				<div class="[ opacity-gradient--full ]"></div>
-				<div class="[ wrapper ] [ shown--small ]">
-					<div class="[ row ]">
-						<div class="[ columna xmall-6 ][ menu__item ]">
-							<a class="[ menu ]" href="#">
-								<i class="[ icon-menu ]"></i>
-							</a>
-						</div>
-						<div class="[ columna xmall-6 ][ text-right ][ menu__item ][ cart ]"></div>
-					</div>
-				</div>
-				<div class="[ wrapper ][ shown--medium ]">
-					<div class="[ row ]">
-						<div class="[ columna xmall-6 ][ text-left ][ menu__item ]">
-							<a href="/" class="[ menu ]">
-								<i class="[ icon-menu ]"></i>
-							</a>
-						</div>
-						<div class="[ columna xmall-6 ][ ][ text-right ][ menu__item ][ cart ]">
-							<a href="#" class="[ js-lang ]">
-								<i class="[ icon-lang ]"></i>
-							</a>
-							<a href="#" class="[ js-login ]">
-								<i class="[ icon-login ]"></i>
-							</a>
-							<a href="mailto:soporte@kichink.com" class="">
-								<i class="[ icon-help ]"></i>
-							</a>
-						</div>
-					</div>
-				</div><!-- .wrapper -->
+				<h1 class="[ ]">
+					<a href="/">
+						<img class="[ logo ][ center ]" src="#" alt="" title="Inicio" />
+					</a>
+				</h1>
+				<nav class="[ ]">
+					<a href="/" class="[ active ][ inline-block ][ menu__item ]">
+						Todos
+					</a><a href="/" class="[ inline-block ][ menu__item ]">
+						Bottom
+					</a><a href="/" class="[ inline-block ][ menu__item ]">
+						Tops
+					</a><a href="/" class="[ inline-block ][ menu__item ]">
+						Footwear
+					</a><a href="/" class="[ inline-block ][ menu__item ]">
+						Shirts
+					</a><a href="/" class="[ inline-block ][ menu__item ]">
+						Misc
+					</a><a href="/" class="[ inline-block ][ menu__item ]">
+						Sweatshirts
+					</a><!-- <div class="[ columna xmall-6 ][ ][ text-right ][ menu__item ][ cart ]">
+						<a href="#" class="[ js-lang ]">
+							<i class="[ icon-lang ]"></i>
+						</a>
+						<a href="#" class="[ js-login ]">
+							<i class="[ icon-login ]"></i>
+						</a>
+						<a href="mailto:soporte@kichink.com" class="">
+							<i class="[ icon-help ]"></i>
+						</a>
+					</div> -->
+				</nav>
 			</header>
 			<div class="[ main ]">
 				<section class="[ cover ]">
-					<div class="[ opacity--full opacity--dark opacity--30 ]"></div>
-					<h1 class="[ center-full ]">
-						<a href="/">
-							<img class="[ img-circle ] [ logo ]" src="#" alt="" title="Inicio" />
-						</a>
-					</h1>
+					<div class="[ opacity--full opacity--30 ][ logo-color ]"></div>
 					<div class="[ store__info ] [ center-full ] [ xmall-12 text-center ]">
 						<h2 class="[ store-name ]"></h2>
 						<h3 class="[ font-serif ] [ store-description ]"></h3>
 					</div><!-- store__info -->
-					<a href="#" class="[ scroll-down ][ center-bottom ]">
-						<i class="[ icon-chevron-down ]"></i>
-					</a>
 				</section><!-- cover -->
 
 				<section class="[  ]">
 					<div class="[ wrapper ]">
-						<ul class="[ product-grid ]"></ul>
+						<ul class="[ product-grid ][ hidden--xmall ]"></ul>
+						<ul class="[ fake-product-grid ]">
+							<li id="item-543124" data-id="543124" class="item resizable">
+								<a href="/buy/543124">
+									<div class="ribbon">Nuevo</div>
+									<img data-adaptive-background="1" nopin="nopin" src="images/negro.jpg" width="100%">
+									<div class="items-data ">
+										<div class="items-name">Leonor Plata</div>
+										<div class="items-price">$ 780.00</div>
+									</div>
+								</a>
+							</li>
+						</ul>
 					</div><!-- wrapper -->
 				</section><!-- product-grid -->
 			</div><!-- main -->
@@ -228,7 +215,7 @@
 		<script type="text/javascript" src="//www.kichink.com/v2/themes/js/smoothprodukts.js"></script>
 
 
-		<!-- Scripts Fashion Theme -->
+		<!-- Scripts Colors Theme -->
 		<script type="text/javascript" src="js/plugins.js"></script>
 		<script type="text/javascript" src="js/functions.js"></script>
 
@@ -281,32 +268,37 @@
 
 
 
-		<!-- /********************************\ -->
-			<!-- #ON LOAD -->
-		<!-- \********************************/ -->
+
 		<script>
 			$(document).ready( function() {
 
+				<!-- /********************************\ -->
+					<!-- #ON LOAD -->
+				<!-- \********************************/ -->
 
+				var options = {
+					exclude: [ 'rgb(255,255,255)' ],
+					parent: '.fake-product-grid .item',
+					selector: '.fake-product-grid .item img'
+				};
+				$.adaptiveBackground.run(options);
 
-			});
-		</script>
-
-
-		<!-- /********************************\ -->
-			<!-- #Triggered events -->
-		<!-- \********************************/ -->
-		<script>
-			$(document).ready(function(){
-
-				$('.scroll-down').on('click', function(e){
-					e.preventDefault();
-					scrollDown();
+				$('.fake-product-grid .item').on('ab-color-found', function(ev,payload){
+					console.log(payload.color);   // The dominant color in the image.
+					console.log(payload.palette); // The color palette found in the image.
+					//console.log(ev);   // The jQuery.Event object
 				});
 
+
+
+
+				<!-- /********************************\ -->
+					<!-- #Triggered events -->
+				<!-- \********************************/ -->
 				$('.js-lang').on('click', function(){
 					changeLang('en');
 				});
+
 
 			});
 		</script>
