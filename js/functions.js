@@ -39,9 +39,17 @@ function itemsExist(){
 
 	interval = setInterval(function(){
 		var itemsLenght = $('.product-grid .item').length;
-
 		if ( itemsLenght > 0 ){
+			//The products are ready
 			clearInterval(interval);
+
+			$('.product-grid .item').each( function(index, val) {
+				var ribbon = $(this).find('.ribbon');
+				if( ribbon.length > 0 ){
+					ribbon.appendTo( $(this).find('.items-data') );
+				}
+			});
+
 		}
 
 	}, 200);
@@ -66,7 +74,9 @@ function applyColor(origin, destiny){
 		color = getColor( $(this) );
 		shade = lightOrDark( '#'+color );
 		console.log(shade);
-		$(this).closest(destiny).addClass('shade-'+shade).css('backgroundColor', '#'+color);
+		$(this)
+			.closest(destiny).addClass('shade-'+shade)
+			.css('backgroundColor', '#'+color);
 	});
 }
 

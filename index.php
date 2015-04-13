@@ -110,33 +110,44 @@
 				<section class="[ products ]">
 					<ul class="[ product-grid ][ no-margin no-padding ][ hidden--xmall ]"></ul>
 					<ul class="[ fake-product-grid ][ no-margin no-padding ]">
+						<li class="item resizable" data-id="461717" id="item-461717">
+							<a href="/buy/461717?byp455=true">
+								<img data-color="E07383" width="100%" nopin="nopin" src="images/rosa.jpg">
+								<div class="items-data discount">
+									<div class="items-name">Bookhouse Girls Club  Slim  Fit Hoodie  ...</div>
+									<div class="items-price">$ 600.00</div>
+									<div class="items-discount">$ 420.00 (-30%)</div>
+									<div class="ribbon">nuevo</div>
+								</div>
+							</a>
+						</li>
 						<li id="item-543124" data-id="543124" class="item resizable">
 							<a href="/buy/543124">
-								<div class="ribbon">Nuevo</div>
 								<img data-color="242426" nopin="nopin" src="images/negro.jpg" width="100%">
 								<div class="items-data ">
 									<div class="items-name">Leonor Plata</div>
 									<div class="items-price">$ 780.00</div>
+									<div class="ribbon">Nuevo</div>
 								</div>
 							</a>
 						</li>
 						<li id="item-543124" data-id="543124" class="item resizable">
 							<a href="/buy/543124">
-								<div class="ribbon">Nuevo</div>
 								<img data-color="612C37" nopin="nopin" src="images/vino.jpg" width="100%">
 								<div class="items-data ">
 									<div class="items-name">Leonor Plata</div>
 									<div class="items-price">$ 780.00</div>
+									<div class="ribbon">Nuevo</div>
 								</div>
 							</a>
 						</li>
 						<li id="item-543124" data-id="543124" class="item resizable">
 							<a href="/buy/543124">
-								<div class="ribbon">Nuevo</div>
 								<img data-color="E07383" nopin="nopin" src="images/rosa.jpg" width="100%">
 								<div class="items-data ">
 									<div class="items-name">Leonor Plata</div>
 									<div class="items-price">$ 780.00</div>
+									<div class="ribbon">Nuevo</div>
 								</div>
 							</a>
 						</li>
@@ -147,8 +158,8 @@
 		<div class="[ clear ]"></div>
 		<footer>
 			<div class="[ wrapper ]">
-				<h2 class="[ text-center ]">Comparte esta tienda</h2>
-				<ul class="[ rrssb-buttons ][ clearfix ][ margin-bottom--small ]">
+				<h3 class="[ text-center ]">Comparte esta tienda</h3>
+				<ul class="[ rrssb-buttons ][ clearfix ][ margin-bottom ]">
 					<li class="rrssb-facebook">
 						<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $site_url; ?>" class="popup">
 							<span class="rrssb-icon">

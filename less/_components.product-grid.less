@@ -9,23 +9,31 @@
 
 .item{
 	width: 100%;
-	padding: 30px;
+	padding-bottom: 30px;
 	position: relative;
 }
 .item img{
 	display: block;
 	width: 100%; height: auto;
-	margin: 0 auto; padding-top: 30px;
+	margin: 0 auto 40px auto; padding: 30px 30px 0 30px;
 }
 .item a{
 	display: block;
 	text-decoration: none;
 }
 
-
 .ribbon{
-	background: @highlight;
-	position: absolute; top: @unidad; left: @unidad;
+	padding: 10px;
+	.font( 20px, 20px, 100 );
+	text-align: center; text-transform: lowercase; text-decoration: none;
+}
+.item.shade-dark .ribbon{
+	border-top: 1px solid @light; border-bottom: 1px solid @light;
+	color: @light;
+}
+.item.shade-light .ribbon{
+	border-top: 1px solid @dark; border-bottom: 1px solid @dark;
+	color: @dark;
 }
 
 
@@ -33,17 +41,28 @@
 	text-align: center;
 }
 
-.items-name, .items-price{
-	text-transform: uppercase;
-}
 
 .items-name{
-	padding: @unidad;
-	.font( 26px, 30px, 100 ); letter-spacing: 2px; color: @light;
+	margin-bottom: 40px; padding: 0 20px;
+	.font( 24px, 30px, 100 );
 }
+.item.shade-dark .items-name{
+	color: @light;
+}
+.item.shade-light .items-name{
+	color: @dark;
+}
+
+
 .items-price{
-	padding: (@unidad/2) 0;
-	.font( 22px, 26px, 400 ); color: @dark;
+	margin-bottom: 40px;
+	.font( 30px, 30px, 400 );
+}
+.item.shade-dark .items-price{
+	color: @light;
+}
+.item.shade-light .items-price{
+	color: @dark;
 }
 
 
@@ -52,20 +71,15 @@
  * IF DISCOUNT
 **/
 .discount{
-	.clearfix;
 
-	.items-price, .items-discount{
-		width: 50%;
-		padding: (@unidad/2) 0;
-		.font( 18px, 22px, 400, 'skolar' );
-		background: @grey;
-		float: left;
-	}
 	.items-price{
-		color: lighten( @dark, 20%);
+		margin-bottom: 10px;
+		.font( 18px, 18px, 100 );
 		text-decoration: line-through;
 	}
 	.items-discount{
+		margin-bottom: 40px;
+		.font( 24px, 24px, 400 );
 		color: @dark;
 	}
 
@@ -80,13 +94,30 @@
 \*------------------------------------*/
 @media (min-width: @small) {
 
-	.product-grid{
+	.fake-product-grid >*:nth-child(2n), .product-grid >*:nth-child(2n){
+		& img, & .items-data {
+			float: right;
+		}
+	}
+
+	.item a{
 		.clearfix;
 	}
 
-	.item{
+	.item img{
 		width: 50%;
-		padding-right: 5px; padding-left: 5px;
+		margin: 0;
+		float: left;
+	}
+
+	.items-name{
+		padding: 0; margin-bottom: 20px;
+	}
+
+	.items-data{
+		padding: 30px 30px 0 30px;
+		width: 50%;
+		text-align: left;
 		float: left;
 	}
 }
@@ -101,7 +132,7 @@
 @media (min-width: @medium) {
 
 	.item{
-		width: 33.333%;
+
 	}
 }
 
@@ -115,6 +146,6 @@
 @media (min-width: @large) {
 
 	.item{
-		width: 24.99999999%;
+
 	}
 }
