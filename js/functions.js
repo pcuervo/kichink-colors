@@ -41,25 +41,68 @@ function itemsExist(){
 		var itemsLenght = $('.product-grid .item').length;
 
 		if ( itemsLenght > 0 ){
-
-			// var options = {
-			// 	//exclude: [ 'rgb(0,0,0)', 'rgba(255,255,255)', 'rgb(255,255,255)' ],
-			// 	parent: '.fake-product-grid .item',
-			// 	selector: '.fake-product-grid .item img'
-			// };
-			// //$.adaptiveBackground.run(options);
-			// $.adaptiveBackground.run(options, {
-			//   success: function($img, data) {
-			//     console.log('Success!', $img, data);
-			//   }
-			// });
-
 			clearInterval(interval);
 		}
 
 	}, 200);
 
 }
+
+/**
+* Get the color
+**/
+function getColor( $element ){
+	var color = $element.data('color');
+	return color;
+}
+
+/**
+* Apply color
+**/
+function applyColor(origin, destiny){
+	var color;
+	var shade;
+	$(origin).each(function(){
+		color = getColor( $(this) );
+		shade = lightOrDark( '#'+color );
+		console.log(shade);
+		$(this).closest(destiny).addClass('shade-'+shade).css('backgroundColor', '#'+color);
+	});
+}
+
+/**
+* Determine if the color is light or dark.
+**/
+function lightOrDark(color){
+	var r,b,g,hsp
+		, a = color;
+
+	if (a.match(/^rgb/)) {
+		a = a.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+(?:\.\d+)?))?\)$/);
+		r = a[1];
+		b = a[2];
+		g = a[3];
+	} else {
+		a = +("0x" + a.slice(1).replace( // thanks to jed : http://gist.github.com/983661
+			a.length < 5 && /./g, '$&$&'
+		)
+		);
+		r = a >> 16;
+		b = a >> 8 & 255;
+		g = a & 255;
+	}
+	hsp = Math.sqrt( // HSP equation from http://alienryderflex.com/hsp.html
+		0.299 * (r * r) +
+		0.587 * (g * g) +
+		0.114 * (b * b)
+	);
+	if (hsp>127.5) {
+		return 'light';
+	} else {
+		return 'dark';
+	}
+}
+
 
 
 

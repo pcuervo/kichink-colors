@@ -3,6 +3,7 @@
 	$store 					= new stdClass();
 	$item 					= new stdClass();
 	$store->id 				= 3829;
+	$store->color 			= '#e22119';
 	//Mi tu 				= 148
 	//Tony Delfinos 		= 3829
 	$store->name 			= "ALEXIA ULIBARRI";
@@ -17,6 +18,8 @@
 	$og_description = "Simona FW14";
 	$og_url = "http://htmls.kichink.com/";
 	$og_images = array("images/logo-tienda.jpg");
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -64,7 +67,7 @@
 			<header class="[ ]">
 				<h1 class="[ ]">
 					<a href="/">
-						<img class="[ logo ][ center ]" src="#" alt="" title="Inicio" />
+						<img class="[ logo ][ center ]" data-color="E22119" src="#" alt="" title="Inicio" />
 					</a>
 				</h1>
 				<nav class="[ ]">
@@ -97,30 +100,48 @@
 			</header>
 			<div class="[ main ]">
 				<section class="[ cover ]">
-					<div class="[ opacity--full opacity--30 ][ logo-color ]"></div>
-					<div class="[ store__info ] [ center-full ] [ xmall-12 text-center ]">
+					<div class="[ opacity--full opacity--30 ][ logo-color ]" style="background-color: <?php echo $store->color; ?>"></div>
+					<div class="[ store__info ][ center-full ][ xmall-12 text-center ]">
 						<h2 class="[ store-name ]"></h2>
-						<h3 class="[ font-serif ] [ store-description ]"></h3>
+						<h3 class="[ store-description ]"></h3>
 					</div><!-- store__info -->
 				</section><!-- cover -->
 
-				<section class="[  ]">
-					<div class="[ wrapper ]">
-						<ul class="[ product-grid ][ hidden--xmall ]"></ul>
-						<ul class="[ fake-product-grid ]">
-							<li id="item-543124" data-id="543124" class="item resizable">
-								<a href="/buy/543124">
-									<div class="ribbon">Nuevo</div>
-									<img data-adaptive-background="1" nopin="nopin" src="images/negro.jpg" width="100%">
-									<div class="items-data ">
-										<div class="items-name">Leonor Plata</div>
-										<div class="items-price">$ 780.00</div>
-									</div>
-								</a>
-							</li>
-						</ul>
-					</div><!-- wrapper -->
-				</section><!-- product-grid -->
+				<section class="[ products ]">
+					<ul class="[ product-grid ][ no-margin no-padding ][ hidden--xmall ]"></ul>
+					<ul class="[ fake-product-grid ][ no-margin no-padding ]">
+						<li id="item-543124" data-id="543124" class="item resizable">
+							<a href="/buy/543124">
+								<div class="ribbon">Nuevo</div>
+								<img data-color="242426" nopin="nopin" src="images/negro.jpg" width="100%">
+								<div class="items-data ">
+									<div class="items-name">Leonor Plata</div>
+									<div class="items-price">$ 780.00</div>
+								</div>
+							</a>
+						</li>
+						<li id="item-543124" data-id="543124" class="item resizable">
+							<a href="/buy/543124">
+								<div class="ribbon">Nuevo</div>
+								<img data-color="612C37" nopin="nopin" src="images/vino.jpg" width="100%">
+								<div class="items-data ">
+									<div class="items-name">Leonor Plata</div>
+									<div class="items-price">$ 780.00</div>
+								</div>
+							</a>
+						</li>
+						<li id="item-543124" data-id="543124" class="item resizable">
+							<a href="/buy/543124">
+								<div class="ribbon">Nuevo</div>
+								<img data-color="E07383" nopin="nopin" src="images/rosa.jpg" width="100%">
+								<div class="items-data ">
+									<div class="items-name">Leonor Plata</div>
+									<div class="items-price">$ 780.00</div>
+								</div>
+							</a>
+						</li>
+					</ul><!-- product-grid -->
+				</section><!-- products -->
 			</div><!-- main -->
 		</div><!-- container -->
 		<div class="[ clear ]"></div>
@@ -276,18 +297,10 @@
 					<!-- #ON LOAD -->
 				<!-- \********************************/ -->
 
-				var options = {
-					exclude: [ 'rgb(255,255,255)' ],
-					parent: '.fake-product-grid .item',
-					selector: '.fake-product-grid .item img'
-				};
-				$.adaptiveBackground.run(options);
+				applyColor('.fake-product-grid .item img', '.fake-product-grid .item');
 
-				$('.fake-product-grid .item').on('ab-color-found', function(ev,payload){
-					console.log(payload.color);   // The dominant color in the image.
-					console.log(payload.palette); // The color palette found in the image.
-					//console.log(ev);   // The jQuery.Event object
-				});
+
+
 
 
 

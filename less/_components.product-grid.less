@@ -2,20 +2,20 @@
 	#PRODUCT GRID
 \*------------------------------------*/
 
-.product-grid{
-	margin: @unidad 0 0 0; padding: 0;
+.fake-product-grid, .product-grid{
 	list-style: none;
 }
 
 
 .item{
 	width: 100%;
-	margin: (@unidad) 0;
+	padding: 30px;
 	position: relative;
 }
 .item img{
 	display: block;
 	width: 100%; height: auto;
+	margin: 0 auto; padding-top: 30px;
 }
 .item a{
 	display: block;
@@ -39,14 +39,11 @@
 
 .items-name{
 	padding: @unidad;
-	.font( 26px, 30px, 600, 'proxima nova' ); letter-spacing: 2px; color: @light;
-	background: @dark;
-	overflow: hidden;
+	.font( 26px, 30px, 100 ); letter-spacing: 2px; color: @light;
 }
 .items-price{
 	padding: (@unidad/2) 0;
-	.font( 22px, 26px, 400, 'skolar' ); color: @dark;
-	background: @grey;
+	.font( 22px, 26px, 400 ); color: @dark;
 }
 
 
