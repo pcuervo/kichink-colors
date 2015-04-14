@@ -6,7 +6,7 @@
 
 	.images-container{
 		img{
-			padding: 0 30px 30px 30px;
+			margin-bottom: 30px;
 		}
 	}
 
@@ -52,21 +52,23 @@
 	\*------------------------------------*/
 	@media (min-width: @medium) {
 
+		.images-container{
+			.clearfix;
+			img{
+				display: inline-block;
+				width: 48%;
+				margin-left: 1%; margin-right: 1%;
+			}
+		}
+
 		.product__info{
-			width: 33.3333%; height: calc( ~'100% - 130px' );
-			padding: @unidad 0;
-			background: @grey;
-			float: left;
-			overflow-y: scroll;
-			position: relative;
+			width: 50%;
+			margin-left: auto; margin-right: auto;
 		}
 
 		.product__buy{
-			width: 33.3333%; height: 130px;
-			padding-top: 20px; margin: 0;
-			background: @dark;
-			color: @light;
-			position: fixed; bottom: 0; right: 0;
+			width: 50%;
+			margin-left: auto; margin-right: auto;
 		}
 
 		#buy_buton{

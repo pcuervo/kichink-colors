@@ -87,16 +87,16 @@
 				</nav>
 			</header>
 			<div class="[ main ]" style="background-color: #e07383 <?php //echo $item->color; ?>; color: #fff">
-				<div class="[ product__info--name ]">
-					<h2 class="[ text-center ] [ js-title ]"></h2>
-				</div><!-- product__info--name -->
-				<div class="[ product__info--price ]">
-					<h2 class="[ text-center ][ js-precio ]"></h2>
-				</div><!-- product__info--price -->
-				<section class="[ images-container ][ responsive-images ][ js-images-container ]">
-				</section><!-- slider -->
-				<section class="[ product__info ]">
-					<div class="[ wrapper ]">
+				<div class="[ wrapper ]">
+					<div class="[ product__info--name ]">
+						<h2 class="[ text-center ] [ js-title ]"></h2>
+					</div><!-- product__info--name -->
+					<div class="[ product__info--price ]">
+						<h2 class="[ text-center ][ js-precio ]"></h2>
+					</div><!-- product__info--price -->
+					<section class="[ images-container ][ text-center ][ responsive-images ][ js-images-container ]">
+					</section><!-- slider -->
+					<section class="[ product__info ]">
 						<article class="[ product__buy ][ margin-bottom--large ][ text-center ][ shown--small ]">
 							<p class="[ margin-bottom--small ]"><small>Compra segura con <a class="[ inline-block ]" href="#">Garantía Kichink!</a></small></p>
 							<h2 class="[ margin-bottom ]">$1,200</h2>
@@ -111,8 +111,8 @@
 						<article class="[ product__options ][ margin-bottom ]">
 							<h2 class="[ opcioncompra ]">Opciones de compra</h2>
 							<div class="[ row ]">
-								<fieldset class="[ columna xmall-12 medium-6 ]">
-									<label for="talla">Talla</label><br />
+								<fieldset class="[ columna xmall-12 medium-6 ][ margin-bottom ]">
+									<label for="talla" class="[ margin-bottom--small ]">Talla</label><br />
 									<select name="talla" id="talla" class="[ custom-select ]">
 										<option value="xs">XS</option>
 										<option value="s">S</option>
@@ -121,8 +121,8 @@
 										<option value="xl">XL</option>
 									</select>
 								</fieldset>
-								<fieldset class="[ columna xmall-12 medium-6 ]">
-									<label for="cantidad">Cantidad</label><br />
+								<fieldset class="[ columna xmall-12 medium-6 ][ margin-bottom ]">
+									<label for="cantidad" class="[ margin-bottom--small ]">Cantidad</label><br />
 									<select name="cantidad" id="cantidad" class="[ custom-select ]">
 										<option value="1">1</option>
 										<option value="2">2</option>
@@ -215,8 +215,8 @@
 								</li>
 							</ul>
 						</article>
-					</div><!-- wrapper -->
-				</section><!-- product__info -->
+					</section><!-- product__info -->
+				</div><!-- wrapper -->
 			</div><!-- main -->
 		</div><!-- container -->
 		<footer class="[ shown--small ]">
