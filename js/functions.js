@@ -145,17 +145,15 @@ function changeLang(lang) {
 function fillSlideshow(images){
 
 	if( images.length <= 1){
-		$('.cycle-controls').hide();
-			$.each(images, function(i, val){
+		$.each(images, function(i, val){
 			image_html = '<img class="[ single-image ]" src="'+val.bordered+'" alt="">';
-			$('.slideshow').append(image_html);
+			$('.js-images-container').append(image_html);
 		});
 	} else {
 		$.each(images, function(i, val){
 			image_html = '<img src="'+val.bordered+'" alt="">';
-			$('.slideshow').append(image_html);
+			$('.js-images-container').append(image_html);
 		});
-		//runCycle();
 	}
 
 }// fillSlideshow
@@ -245,22 +243,6 @@ function toggleRelatedProducts(clickedElement){
 		return;
 	}
 }
-
-function fillRelatedProducts(related_products){
-	$.each(related_products, function(i, product){
-		var html_related_product = ' \
-			<li style="" data-id="'+product.id+'" class="item resizable"> \
-				<a href="/kichink-fashion/buy.php?id='+product.id+'"> \
-					<img nopin="nopin" src="'+product.image+'" width="100%"> \
-					<div class="items-data "> \
-						<div class="items-name">'+product.name+'</div> \
-						<div class="items-price">$'+product.price+'</div> \
-					</div> \
-				</a> \
-			</li>';
-		$('.product-grid').append(html_related_product);
-	})
-}// fillRelatedProducts
 
 
 /*------------------------------------*\

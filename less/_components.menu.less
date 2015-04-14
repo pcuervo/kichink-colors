@@ -5,12 +5,18 @@
 nav{
 	height: 40px;
 	border-bottom: 1px solid @dark;
-	overflow: scroll;
+	overflow: hidden;
 	white-space: nowrap;
 }
 
 .sub-nav{
 	height: 40px;
+}
+
+.overflow-holder{
+	height: 50px;
+	white-space: nowrap;
+	overflow: scroll;
 }
 
 .menu__item{
@@ -223,6 +229,10 @@ nav{
     #MEDIUM
 \*------------------------------------*/
 @media (min-width: @medium) {
+
+	nav{
+		text-align: center;
+	}
 
 	.menu__item{
 		height: 75px

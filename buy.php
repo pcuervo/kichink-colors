@@ -28,6 +28,9 @@
 		<meta property="og:site_name" content="<?php echo $store->name; ?> - Kichink!"/>
 		<meta property="og:image" content="<?php echo $og_images; ?>" />
 
+		<!-- Google Fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
+
 		<!-- Lo requiere Kichink! -->
 		<link rel="stylesheet" type="text/css" href="//www.kichink.com/v2/themes/css/searchbox.css" media="screen"/>
 		<link rel="stylesheet" type="text/css" href="//www.kichink.com/v2/themes/css/shoppingcart.css" />
@@ -46,83 +49,30 @@
 		<!--[if lt IE 9]>
 			<p class="chromeframe">Estás usando una versión <strong>vieja</strong> de tu explorador. Por favor <a href="http://browsehappy.com/" target="_blank"> actualiza tu explorador</a> para tener una experiencia completa.</p>
 		<![endif]-->
-		<div id="sidr" class="[ sidr ]">
-			<div id="menu">
-				<ul>
-					<div class="[ shown--small ]">
-						<li>
-							<a href="#" class="">
-								<i class="[ icon-lang ]"></i> Idioma/Moneda
-							</a>
-						</li>
-						<li>
-							<a href="#" class="">
-								<i class="[ icon-login ]"></i> Login
-							</a>
-						</li>
-						<li>
-							<a href="mailto:soporte@kichink.com" class="">
-								<i class="[ icon-help ]"></i> Ayuda
-							</a>
-						</li>
-					</div><!-- shown--small -->
-					<li><a href="http://fofwebdesign.co.uk/">Mujeres</a> <label for="fof" class="toggle-sub" onclick="">&#9658;</label>
-						<input type="checkbox" name="nav" id="fof" class="sub-nav-check"/>
-						<ul id="fof-sub" class="sub-nav">
-							<label for="fof" class="[ toggle back ]" onclick="" title="Back">Atras</label>
-							<li class="sub-heading">Mujeres </li>
-							<li><a href="#">Faldas</a></li>
-							<li><a href="#">Tacones</a></li>
-						</ul>
-					</li>
-					<li><a href="http://fast-edit.co.uk/">Hombres</a></li>
-					<li><a href="http://fast-apps.co.uk/">Niños</a> <label for="fast-apps" class="toggle-sub" onclick="">&#9658;</label>
-						<input type="checkbox" name="nav" id="fast-apps" class="sub-nav-check"/>
-						<ul id="fast-apps-sub" class="sub-nav">
-							<label for="fast-apps" class="[ toggle back ]" onclick="" title="Back">Atras</label>
-							<li class="sub-heading">Niños</li>
-							<li><a href="#">Juguetes</a></li>
-							<li><a href="#">Carreolas</a></li>
-						</ul>
-					</li>
-					<li><a href="http://www.dynamicdrive.com/">Accesorios</a></li>
-				</ul>
-			</div><!-- closing "#menu" -->
-		</div><!-- sidr -->
 		<div id="item-container" class="[ container ]">
 			<header class="[ ]">
-				<div class="[ wrapper ] [ shown--small ]">
-					<div class="[ row ]">
-						<div class="[ columna xmall-4 ][ menu__item ]">
-							<a class="[ menu ]" href="#">
-								<i class="[ icon-menu ]"></i>
-							</a>
-						</div>
-						<div class="[ columna xmall-4 ][ menu__item ]">
-							<h1 class="">
-								<a class="[ block center ]" href="/">
-									<img class="[ img-circle ][ block center ] [ logo ]" src="#" alt="<?php echo $store->name; ?>" title="Inicio" />
-								</a>
-							</h1>
-						</div>
-						<div class="[ columna xmall-4 ][ text-right ][ menu__item ][ cart ]"></div>
-					</div>
-				</div>
-				<div class="[ wrapper ][ shown--medium ]">
-					<div class="[ row ]">
-						<div class="[ columna xmall-4 ][ text-left ][ menu__item ]">
-							<a href="/" class="[ menu ]">
-								<i class="[ icon-menu ]"></i>
-							</a>
-						</div>
-						<div class="[ columna xmall-4 ][ menu__item ]">
-							<h1 class="">
-								<a class="[ block center ]" href="/">
-									<img class="[ img-circle ][ block center ] [ logo ]" src="#" alt="<?php echo $store->name; ?>" title="Inicio" />
-								</a>
-							</h1>
-						</div>
-						<div class="[ columna xmall-4 ][ ][ text-right ][ menu__item ][ cart ]">
+				<h1 class="[ ]">
+					<a href="/">
+						<img class="[ logo ][ center ]" data-color="E22119" src="#" alt="" title="Inicio" />
+					</a>
+				</h1>
+				<nav class="[ ]">
+					<div class="[ overflow-holder ]">
+						<a href="/" class="[ active ][ inline-block ][ menu__item ]">
+							Todos
+						</a><a href="/" class="[ inline-block ][ menu__item ]">
+							Bottom
+						</a><a href="/" class="[ inline-block ][ menu__item ]">
+							Tops
+						</a><a href="/" class="[ inline-block ][ menu__item ]">
+							Footwear
+						</a><a href="/" class="[ inline-block ][ menu__item ]">
+							Shirts
+						</a><a href="/" class="[ inline-block ][ menu__item ]">
+							Misc
+						</a><a href="/" class="[ inline-block ][ menu__item ]">
+							Sweatshirts
+						</a><!-- <div class="[ columna xmall-6 ][ ][ text-right ][ menu__item ][ cart ]">
 							<a href="#" class="[ js-lang ]">
 								<i class="[ icon-lang ]"></i>
 							</a>
@@ -132,24 +82,69 @@
 							<a href="mailto:soporte@kichink.com" class="">
 								<i class="[ icon-help ]"></i>
 							</a>
-						</div>
-					</div>
-				</div><!-- .wrapper -->
+						</div> -->
+					</div><!-- overflow-holder -->
+				</nav>
 			</header>
-			<div class="[ main ]">
-				<section class="[ slider ]">
-					<div class="[ slideshow ] [ js-cycle-slideshow ]">
-
-					</div>
-					<div class="cycle-controls">
-						<span class="cycle-prev"><i class="icon-chevron-prev"></i></span>
-						<span class="cycle-next"><i class="icon-chevron-next"></i></span>
-					</div>
+			<div class="[ main ]" style="background-color: #e07383 <?php //echo $item->color; ?>; color: #fff">
+				<div class="[ product__info--name ]">
+					<h2 class="[ text-center ] [ js-title ]"></h2>
+				</div><!-- product__info--name -->
+				<div class="[ product__info--price ]">
+					<h2 class="[ text-center ][ js-precio ]"></h2>
+				</div><!-- product__info--price -->
+				<section class="[ images-container ][ responsive-images ][ js-images-container ]">
 				</section><!-- slider -->
 				<section class="[ product__info ]">
 					<div class="[ wrapper ]">
+						<article class="[ product__buy ][ margin-bottom--large ][ text-center ][ shown--small ]">
+							<p class="[ margin-bottom--small ]"><small>Compra segura con <a class="[ inline-block ]" href="#">Garantía Kichink!</a></small></p>
+							<h2 class="[ margin-bottom ]">$1,200</h2>
+							<a href="#" class="[ inline-block ][ button button--large button--light ]" id="buy_buton" data-id="<?php echo $item_id ?>" style="color: #e07383" >Lo quiero</a>
+						</article>
+						<article class="[ row ][ margin-bottom ]" id="item-detail">
+							<h2 class="">Descripción</h2>
+							<div class="[ product__info--description ] [ description ] [ columna xmall-12 ]">
+								<p class="[  ]"></p>
+							</div><!-- product__info--price -->
+						</article>
+						<article class="[ product__options ] [ row ] [ margin-bottom ]">
+							<h2 class="[ opcioncompra ]">Opciones de compra</h2>
+							<fieldset>
+								<label for="talla">Talla</label><br />
+								<select name="talla" id="talla">
+									<option value="xs">XS</option>
+									<option value="s">S</option>
+									<option value="m">M</option>
+									<option value="l">L</option>
+									<option value="xl">XL</option>
+								</select>
+							</fieldset>
+							<fieldset>
+								<label for="cantidad">Cantidad</label><br />
+								<select name="cantidad" id="cantidad">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+							</fieldset>
+						</article>
+						<article class="[ product__extra ] [ row ][ margin-bottom ]">
+							<h2 class="">Información adicional</h2>
+							<!-- <p class="[ text-cente">Disponibilidad</p> -->
+							<p class="[ js-disponibilidad ]"></p>
+							<!-- <p class="[ text-cente">Formas de pago</p> -->
+							<p class="">Tarjeta de crédito y efectivo</p>
+						</article>
+						<article class="[ product__buy ][ margin-bottom--large ][ text-center ][ shown--small ]">
+							<p class="[ margin-bottom--small ]"><small>Compra segura con <a class="[ inline-block ]" href="#">Garantía Kichink!</a></small></p>
+							<h2 class="[ margin-bottom ]">$1,200</h2>
+							<a href="#" class="[ inline-block ][ button button--large button--light ]" id="buy_buton" data-id="<?php echo $item_id ?>" style="color: #e07383" >Lo quiero</a>
+						</article>
 						<article>
-							<ul class="[ rrssb-buttons ][ margin-bottom ][ clearfix ]">
+							<ul class="[ rrssb-buttons ][ no-margin ][ clearfix ]">
 								<li class="rrssb-facebook">
 									<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $site_url; ?>" class="popup">
 										<span class="rrssb-icon">
@@ -218,76 +213,8 @@
 								</li>
 							</ul>
 						</article>
-						<article class="[ row ][ margin-bottom ]" id="item-detail">
-							<div class="[ product__info--name ] [ columna xmall-6 ]">
-								<h2 class="[ text-center ] [ title ]"></h2>
-							</div><!-- product__info--name -->
-							<div class="[ product__info--price ] [ columna xmall-6 ]">
-								<h2 class="[ text-center font-serif ] [ precio ]"></h2>
-							</div><!-- product__info--price -->
-							<div class="[ clear ]"></div>
-							<h2 class="[ text-center ]">Descripción</h2>
-							<div class="[ product__info--description ] [ description ] [ columna xmall-12 ]">
-								<p class="[  ]"></p>
-							</div><!-- product__info--price -->
-						</article>
-						<article class="[ product__options ] [ row ] [ margin-bottom ]">
-							<h2 class="[ text-center ] [ opcioncompra ]">Opciones de compra</h2>
-							<div id="opc" class="btn-group" data-toggle="buttons"></div>
-							<div class="[ margin-bottom ]">
-								<h3 class="[ text-center font-serif ]">Tallas</h3>
-								<div class="[ text-center ]">
-									<a href="#" class="[ inline-block ][ button button--hollow button--dark ] [ disabled ]">XS</a>
-									<a href="#" class="[ inline-block ][ button button--hollow button--dark ]">S</a>
-									<a href="#" class="[ inline-block ][ button button--hollow button--dark ] [ selected ]">M</a>
-									<a href="#" class="[ inline-block ][ button button--hollow button--dark ]">L</a>
-									<a href="#" class="[ inline-block ][ button button--hollow button--dark ] [ disabled ]">XL</a>
-								</div>
-							</div><!-- margin-bottom -->
-							<div class="[ margin-bottom ]">
-								<h3 class="[ text-center font-serif ]">Colores</h3>
-								<div class="[ text-center ]">
-									<a href="#" class="[ inline-block ][ button button--hollow button--dark ]">azul</a>
-									<a href="#" class="[ inline-block ][ button button--hollow button--dark ][ selected ]">negro</a>
-									<a href="#" class="[ inline-block ][ button button--hollow button--dark ]">blanco</a>
-								</div>
-							</div><!-- margin-bottom -->
-						</article>
-						<article class="[ product__extra ] [ row ][ margin-bottom ]">
-							<h2 class="[ text-center ]">Información adicional</h2>
-							<!-- <p class="[ text-center font-serif ]">Disponibilidad</p> -->
-							<p class="[ text-center ] [ js-disponibilidad ]"></p>
-							<!-- <p class="[ text-center font-serif ]">Formas de pago</p> -->
-							<p class="[ text-center ]">Tarjeta de crédito y efectivo</p>
-						</article>
-						<article class="[ product__buy ][ margin-bottom ][ text-center ][ shown--small ]">
-							<h2 class="[ font-serif ][ no-margin-bottom ]">$1,200</h2>
-							<a href="#" class="[ inline-block ][ button button--large button--dark ]" id="buy_buton" data-id="<?php echo $item_id ?>">Lo quiero</a>
-							<p class="[ no-margin-bottom ]"><small>Compra segura con <a class="[ inline-block ]" href="#">Garantía Kichink!</a></small></p>
-						</article>
-						<article class="[ text-center ][ margin-bottom ]">
-							<a href="#" class="[ shown--medium--inline-block ][ button button--dark ][ js-related-products ]">Ver productos relacionados</a>
-							<h2 class="shown--small">Artículos relacionados</h2>
-							<div class="[ product-grid-wrapper ][ hide ][ related-product-grid ][ shown--small ]">
-								<ul class="[ product-grid ]">
-								</ul>
-								<a href="#" class="[ shown--medium--inline-block ][ button button--dark ][ margin-bottom ][ js-related-products ]">Regresar</a>
-							</div>
-						</article>
 					</div><!-- wrapper -->
 				</section><!-- product__info -->
-				<section class="[ product__buy ][ margin-bottom ][ text-center ][ shown--medium ]">
-					<h2 class="[ font-serif ][ no-margin-bottom ]">$1,200</h2>
-					<a href="#" class="[ inline-block ][ button button--large button--dark ]" id="buy_buton" data-id="<?php echo $item_id ?>">Lo quiero</a>
-					<p class="[ no-margin-bottom ]"><small>Compra segura con <a class="[ inline-block ]" href="#">Garantía Kichink!</a></small></p>
-				</section>
-				<section class="[ product-grid-wrapper ][ hide ][ related-product-grid ]">
-					<ul class="[ product-grid ]">
-					</ul>
-					<div class="[ text-center ]">
-						<a href="#" class="[ shown--medium--inline-block ][ button button--dark ][ margin-bottom ][ js-related-products ]">Regresar</a>
-					</div><!-- text-center -->
-				</section>
 			</div><!-- main -->
 		</div><!-- container -->
 		<footer class="[ shown--small ]">
@@ -321,7 +248,7 @@
 	<!-- \********************************/ -->
 	<script>
 		$(document).ready(function() {
-			var store_id = <?php echo $store->id ?>;
+			var store_id = <?php echo $store->id; ?>;
 			var item_id = <?php echo $item_id; ?>;
 
 			$.ajax({
@@ -338,11 +265,8 @@
 					var ajax_request = jQuery.parseJSON(data.toString());
 					//console.log(ajax_request.data[0]);
 					fillSlideshow(ajax_request.data[0].images);
-					runCycle();
 					load_item(ajax_request.data[0], false);
 					mostrarDisponibilidad(ajax_request.data[0].disponibilidad[0]);
-					fillRelatedProducts(ajax_request.data[0].related);
-
 				}
 			});
 
@@ -419,7 +343,7 @@
 
 				$(".myownbanner").hide();
 
-				$("#item-container").find(".title").html(data.name);
+				$('.js-title').html(data.name);
 
 				var val = $("#item-container").find(".description p").html(data.description);
 
@@ -434,11 +358,11 @@
 				var p = aplicar_descuento.toString();
 				var precio = p.split(".");
 				//console.log(precio)
-				$("#item-container").find("#item-detail .precio").html("$" + precio[0].toString().replace(/,/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "." + "<sup>" + precio[1] + "</sup>");
+				$("#item-container").find(".js-precio").html("$" + precio[0].toString().replace(/,/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "." + "<sup>" + precio[1] + "</sup>");
 
 				if (parseInt(data.discount) > 0) {
 					precio = data.price.toString().split(".");
-						$("#item-container").find("#item-detail .precio").append("<div class='discount'><p>Precio Regular</p><span class='items-price'>$" + precio[0].toString().replace(/,/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "." + precio[1] + "</span></div>");
+						$("#item-container").find(".js-precio").append("<div class='discount'><p>Precio Regular</p><span class='items-price'>$" + precio[0].toString().replace(/,/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "." + precio[1] + "</span></div>");
 				}
 
 				var disp = "Art&iacute;culo no disponible";
