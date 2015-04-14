@@ -28,7 +28,7 @@
 		<meta property="og:site_name" content="<?php echo $store->name; ?> - Kichink!"/>
 		<meta property="og:image" content="<?php echo $og_images; ?>" />
 
-		<!-- Google Fonts -->
+		<!-- CDNs -->
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
 
 		<!-- Lo requiere Kichink! -->
@@ -108,28 +108,30 @@
 								<p class="[  ]"></p>
 							</div><!-- product__info--price -->
 						</article>
-						<article class="[ product__options ] [ row ] [ margin-bottom ]">
+						<article class="[ product__options ][ margin-bottom ]">
 							<h2 class="[ opcioncompra ]">Opciones de compra</h2>
-							<fieldset>
-								<label for="talla">Talla</label><br />
-								<select name="talla" id="talla">
-									<option value="xs">XS</option>
-									<option value="s">S</option>
-									<option value="m">M</option>
-									<option value="l">L</option>
-									<option value="xl">XL</option>
-								</select>
-							</fieldset>
-							<fieldset>
-								<label for="cantidad">Cantidad</label><br />
-								<select name="cantidad" id="cantidad">
-									<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5</option>
-								</select>
-							</fieldset>
+							<div class="[ row ]">
+								<fieldset class="[ columna xmall-12 medium-6 ]">
+									<label for="talla">Talla</label><br />
+									<select name="talla" id="talla" class="[ custom-select ]">
+										<option value="xs">XS</option>
+										<option value="s">S</option>
+										<option value="m">M</option>
+										<option value="l">L</option>
+										<option value="xl">XL</option>
+									</select>
+								</fieldset>
+								<fieldset class="[ columna xmall-12 medium-6 ]">
+									<label for="cantidad">Cantidad</label><br />
+									<select name="cantidad" id="cantidad" class="[ custom-select ]">
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+									</select>
+								</fieldset>
+							</div><!-- row -->
 						</article>
 						<article class="[ product__extra ] [ row ][ margin-bottom ]">
 							<h2 class="">Información adicional</h2>
@@ -282,6 +284,7 @@
 		});
 
 		itemsExist();
+		$('.custom-select').customSelect();
 
 		$.ajax({
 			type: "POST",
@@ -485,17 +488,6 @@
 
 			return 0;
 		}
-
-		$(document).ready(function() {
-
-			$('.js-related-products').on('click', function(){
-				toggleRelatedProducts( this );
-			});
-
-		});
-
-
-
 	</script>
 
 </html>
