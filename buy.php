@@ -265,7 +265,7 @@
 				success: function(data) {
 					$("#loading-items").hide();
 					var ajax_request = jQuery.parseJSON(data.toString());
-					//console.log(ajax_request.data[0]);
+					console.log(ajax_request.data[0]);
 					fillSlideshow(ajax_request.data[0].images);
 					load_item(ajax_request.data[0], false);
 					mostrarDisponibilidad(ajax_request.data[0].disponibilidad[0]);
@@ -294,6 +294,7 @@
 			url: "https://www.kichink.com/api/stores/get_store_details",
 			success: function(data) {
 				var ajax_request = jQuery.parseJSON(data.toString());
+				console.log(ajax_request);
 				fillStoreDetails(ajax_request.data.name, ajax_request.data.description, ajax_request.data.logo, ajax_request.data.header);
 				fillMenuCategories(ajax_request.data.categories);
 			}
