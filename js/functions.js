@@ -244,6 +244,64 @@ function toggleRelatedProducts(clickedElement){
 	}
 }
 
+function agregaOpcionesDeCompra(opciones){
+
+	var tallas = [];
+	var unidades = [];
+	var modelo;
+	$.each(opciones, function(i, opcion){
+		if(opcion.label.indexOf(':')>-1){
+			var opcionCompra = {};
+			opciones_arr = opcion.label.split(':');
+			modelo = opciones_arr[0];
+
+			opcionCompra['talla'] = opciones_arr[1];
+			opcionCompra['unidades'] = opcion.units;
+			tallas.push( opcionCompra );
+		}
+	});
+	$('.js-modelo').text(modelo);
+	
+	crearSelectTallas( tallas );
+	
+}// agregaOpcionesDeCompra
+
+function crearSelectTallas( tallas ){
+
+	var select_tallas = '<select name="talla" id="talla" class="[ custom-select ][ js-tallas ]">';
+	select_tallas = select_tallas + '<option data-unidades="0">Selecciona una talla</option>';
+	
+	$.each( tallas, function( i, opcionesCompra ) {
+		console.log(opcionesCompra);
+		select_tallas = select_tallas + '<option data-unidades="' + opcionesCompra.unidades + '" value="' + opcionesCompra.talla + '">' + opcionesCompra.talla + '</option>';
+	});
+
+	select_tallas = select_tallas + '</select>';
+	$('.js-select-tallas').append(select_tallas);
+	$('.custom-select').customSelect();
+
+}// crearSelectTallas
+
+function crearSelectUnidades( unidades ){
+
+	$('.js-select-unidades').empty();
+
+	if ( ! unidades )
+		return;
+
+	var label_unidades = '<label for="cantidad" class="[ margin-bottom--small ]">Cantidad</label><br />';
+	var select_unidades = '<select name="cantidad" id="cantidad" class="[ custom-select-unidades ][ js-unidades ]">'
+
+	for ( i = 1; i <= unidades; i++ )
+		select_unidades = select_unidades + '<option value="' + i + '">' + i + '</option>';
+	
+	select_unidades = select_unidades + '</select>';
+	$('.js-select-unidades').append(select_unidades);
+	$('.custom-select-unidades').customSelect();
+
+}// crearSelectUnidades
+
+
 
 /*------------------------------------*\
 	#RESPONSIVE
