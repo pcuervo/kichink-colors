@@ -112,24 +112,13 @@
 							<h2 class="[ opcioncompra ]">Opciones de compra</h2>
 							<div class="[ row ]">
 								<fieldset class="[ columna xmall-12 medium-6 ][ margin-bottom ]">
-									<label for="talla" class="[ margin-bottom--small ]">Talla</label><br />
-									<select name="talla" id="talla" class="[ custom-select ]">
-										<option value="xs">XS</option>
-										<option value="s">S</option>
-										<option value="m">M</option>
-										<option value="l">L</option>
-										<option value="xl">XL</option>
-									</select>
+									<label for="talla" class="[ margin-bottom--small ]">Modelo: <span class="js-modelo"></span></label><br />
 								</fieldset>
-								<fieldset class="[ columna xmall-12 medium-6 ][ margin-bottom ]">
-									<label for="cantidad" class="[ margin-bottom--small ]">Cantidad</label><br />
-									<select name="cantidad" id="cantidad" class="[ custom-select ]">
-										<option value="1">1</option>
-										<option value="2">2</option>
-										<option value="3">3</option>
-										<option value="4">4</option>
-										<option value="5">5</option>
-									</select>
+								<fieldset class="[ columna xmall-12 medium-6 ][ margin-bottom ][ js-select-tallas ]">
+									<label for="talla" class="[ margin-bottom--small ]">Talla</label><br />
+								</fieldset>
+								<fieldset class="[ columna xmall-12 medium-6 ][ margin-bottom ][ js-select-unidades ]">
+									
 								</fieldset>
 							</div><!-- row -->
 						</article>
@@ -265,10 +254,11 @@
 				success: function(data) {
 					$("#loading-items").hide();
 					var ajax_request = jQuery.parseJSON(data.toString());
-					//console.log(ajax_request.data[0]);
+					console.log(ajax_request.data[0]);
 					fillSlideshow(ajax_request.data[0].images);
 					load_item(ajax_request.data[0], false);
 					mostrarDisponibilidad(ajax_request.data[0].disponibilidad[0]);
+					agregaOpcionesDeCompra(ajax_request.data[0].purchase_options[0]);
 				}
 			});
 
@@ -281,10 +271,16 @@
 				checkoutURI: "https://www.kichink.com/checkout",
 				showOnPurchase: true,
 			});
+
+			$('.js-select-tallas').on( 'change', '.js-tallas', function(){
+				var selected = $( this ).find( ':selected' );
+				var unidades = parseInt( selected.data( 'unidades' ) );
+				crearSelectUnidades( unidades );
+			});
 		});
 
 		itemsExist();
-		$('.custom-select').customSelect();
+		//$('.custom-select').customSelect();
 
 		$.ajax({
 			type: "POST",
