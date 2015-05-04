@@ -2,10 +2,12 @@
 	$site_url 				= 'http://www.airesdecampo.com/tienda/';
 	$store 					= new stdClass();
 	$item 					= new stdClass();
-	$store->id 				= 3829;
+	$store->id 				= 34837;
 	$store->color 			= '#e22119';
 	//Mi tu 				= 148
 	//Tony Delfinos 		= 3829
+	//Tungas		 		= 6666
+	//El Shirota	 		= 34837
 	$store->name 			= "ALEXIA ULIBARRI";
 	$store->description 	= "Simona FW14";
 	$store->logo 			= "images/logo-tienda.jpg";
