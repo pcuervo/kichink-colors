@@ -246,6 +246,52 @@
 					<a class="[ inline-block ]" href="#">Políticas de privacidad</a>
 				</div>
 			</div><!-- wrapper -->
+
+			<div class="[ modal-wrapper ] [ hide ]">
+				<div class="[ modal modal--read-mode ]">
+					<div class="[ close-modal ]">
+						<i class="[ icon-close ]"></i>
+					</div>
+					<div class="[ modal-content ]">
+						<div class="[ modal-header ] [ border-bottom margin-bottom-small ]">
+							<h3 class="[ text-center ][ no-margin ]">Selecciona la gama de colores de tu preferencia</h3>
+							<p class="[ text-center ]"><small>Por default tomarémos los colores dominantes de tus fotos</small></p>
+						</div><!-- modal-header -->
+						<div class="[ modal-body ]">
+							<form class="[ row ]" action="#">
+								<fieldset class="[ margin-bottom--large ][ columna xmall-6 ]">
+									<input type="radio"> Classy <br />
+									<img class="[ image-responsive ]" src="images/palletes/pallete-classy.jpg" alt="">
+								</fieldset>
+								<fieldset class="[ margin-bottom--large ][ columna xmall-6 ]">
+									<input type="radio"> Neon <br />
+									<img class="[ image-responsive ]" src="images/palletes/pallete-neon.jpg" alt="">
+								</fieldset>
+								<fieldset class="[ margin-bottom--large ][ columna xmall-6 ]">
+									<input type="radio"> Pastel <br />
+									<img class="[ image-responsive ]" src="images/palletes/pallete-pastel.jpg" alt="">
+								</fieldset>
+								<fieldset class="[ margin-bottom--large ][ columna xmall-6 ]">
+									<input type="radio"> Cold <br />
+									<img class="[ image-responsive ]" src="images/palletes/pallete-cold.jpg" alt="">
+								</fieldset>
+								<fieldset class="[ margin-bottom--large ][ columna xmall-6 ]">
+									<input type="radio"> Warm <br />
+									<img class="[ image-responsive ]" src="images/palletes/pallete-warm.jpg" alt="">
+								</fieldset>
+								<div class="[ clear ]"></div>
+								<div class="[ text-center ]">
+									<a class="[ block ][ button button--hollow button--dark ]">
+										Seleccionar
+									</a>
+								</div>
+							</form>
+						</div><!-- modal-body -->
+					</div><!-- modal-content -->
+				</div><!-- modal -->
+			</div><!-- modal-wrapper -->
+
+
 		</footer>
 
 		<!-- Scripts de Kichink! -->
@@ -322,7 +368,9 @@
 
 				applyColor('.fake-product-grid .item img', '.fake-product-grid .item');
 
-
+				if ( getUrlParameter('edit') == 'true' ){
+					showColorOptions();
+				}
 
 
 
@@ -336,9 +384,13 @@
 				});
 
 				$('header').on('click', '.js-close-menu', function(e){
-					console.log('click');
+					//console.log('click');
 					e.preventDefault();
 					closeSubNav();
+				});
+
+				$('.close-modal').on('click', function(event) {
+					closeModal( $(this) );
 				});
 
 

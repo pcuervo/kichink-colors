@@ -203,8 +203,9 @@ function fillStoreDetails(name, description, logo, cover){
 
 function fillMenuCategories(categories){
 	$.each(categories, function(i, category){
-		console.log(category);
-		var menu_item_html = '<a class="[ inline-block ][ menu__item ][ js-'+category.name+' ]" href="#">'+category.name+'</a>';
+		//console.log(category);
+		var categorySlug = convertToSlug( replaceAccents( category.name ) );
+		var menu_item_html = '<a class="[ inline-block ][ menu__item ][ js-'+categorySlug+' ]" href="#">'+category.name+'</a>';
 
 		if(category.subcats.length == 0){
 			$('.js-nav .overflow-holder').append(menu_item_html);
@@ -213,7 +214,7 @@ function fillMenuCategories(categories){
 
 		//Agregar subcategorías
 		var sub_nav = ' \
-			<div class="[ sub-nav opened ][ js-'+category.name+' ][  ]"> \
+			<div class="[ sub-nav opened ][ js-'+categorySlug+' ][  ]"> \
 				<div class="[ overflow-holder ]"> \
 					<a href="/" class="[ inline-block ][ menu__item ][ close-menu js-close-menu ]"> \
 						<i class="icon-close"></i> \
@@ -227,6 +228,67 @@ function fillMenuCategories(categories){
 function closeSubNav(){
 	$('.sub-nav').removeClass('opened');
 }
+
+function getUrlParameter(sParam){
+	var sPageURL = window.location.search.substring(1);
+	var sURLVariables = sPageURL.split('&');
+	for (var i = 0; i < sURLVariables.length; i++)
+	{
+		var sParameterName = sURLVariables[i].split('=');
+		if (sParameterName[0] == sParam)
+		{
+			return sParameterName[1];
+		}
+	}
+}
+
+function showColorOptions(){
+	$('.modal-wrapper').removeClass('hide', function(){
+		console.log('hidden');
+
+	});
+}
+
+//Colores
+window.globalVar = classy = [ '#000', '#fff' ];
+window.globalVar = neon = [ '#fc282f', '#0069b1', '#8dfdf0', '#35f776', '#fffb00' ];
+window.globalVar = pastel = [ '#0a7ca9', '#63b1d6', '#a9fefe', '#fed4cc', '#d8696d' ];
+window.globalVar = cold = [ '#84bcff', '#738192', '#cae1ff', '#486a93', '#a9bdd6' ];
+window.globalVar = warm = [ '#fc5149', '#f28d67', '#f17a59', '#fc483a', '#a61600' ];
+
+/**
+ * Closes Modal
+ * @param element to be closed
+**/
+function closeModal(element){
+	$('.modal-wrapper').addClass('hide');
+}
+
+/**
+ * Replace accents in a given text.
+ * @param {String} text
+ * @return {String} text with replaced accents
+ */
+function replaceAccents( text ){
+	var charAccentMap = {á:'a',é:'e',í:'i',ó:'o',ú:'u',Á:'A',É:'E',Í:'I',Ó:'O',Ú:'U',};
+
+	var text_array = text.split('');
+	for( var i = 0, len = text_array.length; i < len; i++ ) {
+		text_array[ i ] = charAccentMap[ text_array[ i ] ] || text_array[ i ];
+	}
+
+	return text_array.join('');
+}// replaceAccents
+
+/**
+* Converts a given text to a Web URL friendly text
+* @param {String} text
+* @return {String} slug
+*/
+function convertToSlug( text ) {
+var slug = text.toLowerCase().replace(/[^\w ]+/g,'').replace(/ +/g,'-');
+	return slug;
+}// convertToSlug
 
 function agregaOpcionesDeCompra(opciones){
 
@@ -256,7 +318,7 @@ function crearSelectTallas( tallas ){
 	select_tallas = select_tallas + '<option data-unidades="0">Selecciona una talla</option>';
 
 	$.each( tallas, function( i, opcionesCompra ) {
-		console.log(opcionesCompra);
+		//console.log(opcionesCompra);
 		select_tallas = select_tallas + '<option data-unidades="' + opcionesCompra.unidades + '" value="' + opcionesCompra.talla + '">' + opcionesCompra.talla + '</option>';
 	});
 
