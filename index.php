@@ -100,8 +100,8 @@
 				</section><!-- cover -->
 
 				<section class="[ products ]">
-					<ul class="[ product-grid ][ no-margin no-padding ][ hidden--xmall ]"></ul>
-					<ul class="[ fake-product-grid ][ no-margin no-padding ]">
+					<ul class="[ product-grid ][ no-margin no-padding ]"></ul>
+					<!-- <ul class="[ fake-product-grid ][ no-margin no-padding ]">
 						<li class="item resizable" data-id="461717" id="item-461717">
 							<a href="/buy/461717?byp455=true">
 								<img data-color="e07383" width="100%" nopin="nopin" src="images/rosa.jpg">
@@ -143,7 +143,7 @@
 								</div>
 							</a>
 						</li>
-					</ul><!-- product-grid -->
+					</ul><!-- product-grid --> 
 				</section><!-- products -->
 			</div><!-- main -->
 		</div><!-- container -->
@@ -295,6 +295,18 @@
 		<script>
 			$(document).ready(function(){
 
+
+				<!-- /********************************\ -->
+					<!-- #ON LOAD -->
+				<!-- \********************************/ -->
+
+				applyColor('.fake-product-grid .item img', '.fake-product-grid .item');
+
+				if ( getUrlParameter('edit') == 'true' ){
+					showColorOptions();
+				}
+
+
 				// Carga carrito dinámicamente
 				$(".cart").ShoppingKart({
 					text: '<i class="icon-cart"></i>',
@@ -334,27 +346,6 @@
 					}
 				});
 
-			});
-		</script>
-
-
-
-
-
-
-		<script>
-			$(document).ready( function() {
-
-				<!-- /********************************\ -->
-					<!-- #ON LOAD -->
-				<!-- \********************************/ -->
-
-				applyColor('.fake-product-grid .item img', '.fake-product-grid .item');
-
-				if ( getUrlParameter('edit') == 'true' ){
-					showColorOptions();
-				}
-
 
 
 
@@ -390,12 +381,16 @@
 					}
 
 					closeModal();
-					localStorage.setItem('pallete', pallete);
-					setPallete( localStorage.getItem('pallete') );
+					localStorage.setItem( 'pallete', pallete );
+
+					removeDataColor();
+					setProductImgColor( localStorage.getItem('pallete') );
+					applyColor('.product-grid .item img', '.product-grid .item');
 
 				});
 
 			});
 		</script>
+
 	</body>
 </html>
