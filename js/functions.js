@@ -203,7 +203,7 @@ function fillStoreDetails(name, description, logo, cover){
 
 function fillMenuCategories(categories){
 	$.each(categories, function(i, category){
-		console.log(category);
+		//console.log(category);
 		var categorySlug = convertToSlug( replaceAccents( category.name ) );
 		var menu_item_html = '<a class="[ inline-block ][ menu__item ][ js-'+categorySlug+' ]" data-category="'+categorySlug+'" href="#">'+category.name+'</a>';
 
@@ -250,10 +250,7 @@ function getUrlParameter(sParam){
 }
 
 function showColorOptions(){
-	$('.modal-wrapper').removeClass('hide', function(){
-		console.log('hidden');
-
-	});
+	$('.modal-wrapper').removeClass('hide');
 }
 
 //Colores
@@ -263,11 +260,16 @@ window.globalVar = pastel = [ '#0a7ca9', '#63b1d6', '#a9fefe', '#fed4cc', '#d869
 window.globalVar = cold = [ '#84bcff', '#738192', '#cae1ff', '#486a93', '#a9bdd6' ];
 window.globalVar = warm = [ '#fc5149', '#f28d67', '#f17a59', '#fc483a', '#a61600' ];
 
+function setPallete(pallete){
+	console.log( pallete );
+	console.log( cold );
+}
+
 /**
  * Closes Modal
  * @param element to be closed
 **/
-function closeModal(element){
+function closeModal(){
 	$('.modal-wrapper').addClass('hide');
 }
 

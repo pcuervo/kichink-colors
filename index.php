@@ -239,32 +239,34 @@
 							<p class="[ text-center ]"><small>Por default tomarémos los colores dominantes de tus fotos</small></p>
 						</div><!-- modal-header -->
 						<div class="[ modal-body ]">
-							<form class="[ row ]" action="/?edit=true" method="get">
+							<form class="[ form-edit ][ row ]">
 								<fieldset class="[ margin-bottom--large ][ columna xmall-6 ]">
-									<input type="radio"> Classy <br />
+									<input type="radio" name="pallete" value="classy"> Classy <br />
 									<img class="[ image-responsive ]" src="images/palletes/pallete-classy.jpg" alt="">
 								</fieldset>
 								<fieldset class="[ margin-bottom--large ][ columna xmall-6 ]">
-									<input type="radio"> Neon <br />
+									<input type="radio" name="pallete" value="neon"> Neon <br />
 									<img class="[ image-responsive ]" src="images/palletes/pallete-neon.jpg" alt="">
 								</fieldset>
 								<fieldset class="[ margin-bottom--large ][ columna xmall-6 ]">
-									<input type="radio"> Pastel <br />
+									<input type="radio" name="pallete" value="pastel"> Pastel <br />
 									<img class="[ image-responsive ]" src="images/palletes/pallete-pastel.jpg" alt="">
 								</fieldset>
 								<fieldset class="[ margin-bottom--large ][ columna xmall-6 ]">
-									<input type="radio"> Cold <br />
+									<input type="radio" name="pallete" value="cold"> Cold <br />
 									<img class="[ image-responsive ]" src="images/palletes/pallete-cold.jpg" alt="">
 								</fieldset>
 								<fieldset class="[ margin-bottom--large ][ columna xmall-6 ]">
-									<input type="radio"> Warm <br />
+									<input type="radio" name="pallete" value="warm"> Warm <br />
 									<img class="[ image-responsive ]" src="images/palletes/pallete-warm.jpg" alt="">
 								</fieldset>
 								<div class="[ clear ]"></div>
+
 								<div class="[ text-center ]">
-									<a class="[ block ][ button button--hollow button--dark ]">
-										Seleccionar
-									</a>
+									<div class="[ error ][ text-center ][ margin-bottom ]"></div>
+									<button class="[ button button--hollow button--dark ]">
+										Aplicar
+									</button>
 								</div>
 							</form>
 						</div><!-- modal-body -->
@@ -365,7 +367,6 @@
 				});
 
 				$('header').on('click', '.js-close-menu', function(e){
-					//console.log('click');
 					e.preventDefault();
 					closeSubNav();
 				});
@@ -376,9 +377,23 @@
 				});
 
 				$('.close-modal').on('click', function(event) {
-					closeModal( $(this) );
+					closeModal();
 				});
 
+				$('.form-edit').submit(function(e) {
+					e.preventDefault();
+					var pallete = $('input[name="pallete"]:checked').val();
+
+					if ( pallete == undefined ){
+						$('.form-edit .error').append('No has seleccionado ningúna paleta');
+						return;
+					}
+
+					closeModal();
+					localStorage.setItem('pallete', pallete);
+					setPallete( localStorage.getItem('pallete') );
+
+				});
 
 			});
 		</script>
