@@ -12,7 +12,7 @@
 
 		/*------------------------------------*\
 			#Triggered events
-		\*------------------------------------*/
+		\*---------f---------------------------*/
 
 
 
@@ -50,6 +50,11 @@ function itemsExist(){
 				}
 			});
 
+			if( localStorage.getItem('pallete') != '' ){
+				setProductImgColor( localStorage.getItem('pallete') );
+				applyColor('.product-grid .item img', '.product-grid .item');
+			}
+			
 		}
 
 	}, 200);
@@ -254,16 +259,65 @@ function showColorOptions(){
 }
 
 //Colores
-window.globalVar = classy = [ '#000', '#fff' ];
-window.globalVar = neon = [ '#fc282f', '#0069b1', '#8dfdf0', '#35f776', '#fffb00' ];
-window.globalVar = pastel = [ '#0a7ca9', '#63b1d6', '#a9fefe', '#fed4cc', '#d8696d' ];
-window.globalVar = cold = [ '#84bcff', '#738192', '#cae1ff', '#486a93', '#a9bdd6' ];
-window.globalVar = warm = [ '#fc5149', '#f28d67', '#f17a59', '#fc483a', '#a61600' ];
 
-function setPallete(pallete){
-	console.log( pallete );
-	console.log( cold );
-}
+
+/**
+ * Sets data-color attribute of product image
+ * @param string pallete - Name of the chosen color pallete
+**/
+function setProductImgColor( pallete ){
+	var palleteColors = getPalleteColors( pallete );
+	var numPalleteColors = palleteColors.length;
+	var currentColor = 0;
+	var products = $('.product-grid li a');
+
+	$.each( products, function(i, product){
+		if ( currentColor == numPalleteColors ) {
+			currentColor = 0;
+		}
+		$(product).find('img').attr( 'data-color', palleteColors[currentColor] );
+		currentColor++;
+		
+	});
+}// setProductImgColor
+
+/**
+ * Gets the array of colors of a given pallete 
+ * @param string pallete - Name of the color pallete
+ * @return array colors - Colors of the pallete
+**/
+function getPalleteColors( pallete ){
+	var classy = [ '000', 'fff' ];
+	var neon = [ 'fc282f', '0069b1', '8dfdf0', '35f776', 'fffb00' ];
+	var pastel = [ '0a7ca9', '63b1d6', 'a9fefe', 'fed4cc', 'd8696d' ];
+	var cold = [ '84bcff', '738192', 'cae1ff', '486a93', 'a9bdd6' ];
+	var warm = [ 'fc5149', 'f28d67', 'f17a59', 'fc483a', 'a61600' ];
+
+	switch( pallete ){
+		case 'classy':
+			return classy;
+		case 'neon':
+			return neon;
+		case 'pastel':
+			return pastel;
+		case 'cold':
+			return cold;
+		default:
+			return warm;
+	}
+}// getPalleteColors
+
+/**
+ * Sets data-color attribute of product image
+ * @param string pallete - Name of the chosen color pallete
+**/
+function removeDataColor( pallete ){
+	var products = $('.product-grid li a');
+
+	$.each( products, function(i, product){
+		$(product).find('img').removeData( 'color' );
+	});
+}// removeDataColor
 
 /**
  * Closes Modal
