@@ -301,8 +301,6 @@
 					<!-- #ON LOAD -->
 				<!-- \********************************/ -->
 
-				applyColor('.fake-product-grid .item img', '.fake-product-grid .item');
-
 				if ( getUrlParameter('edit') == 'true' ){
 					showColorOptions();
 				}
@@ -386,7 +384,7 @@
 
 					removeDataColor();
 					setProductImgColor( localStorage.getItem('pallete') );
-					applyColor('.product-grid .item img', '.product-grid .item');
+					//applyColor('.product-grid .item img', '.product-grid .item');
 
 				});
 

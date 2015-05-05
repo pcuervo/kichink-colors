@@ -68,10 +68,10 @@
 	margin-bottom: 40px;
 	.font( 30px, 30px, 400 );
 }
-.item.shade-dark .items-price{
+.item.shade-dark .items-price, {
 	color: @light;
 }
-.item.shade-light .items-price{
+.item.shade-light .items-price, {
 	color: @dark;
 }
 
@@ -90,9 +90,15 @@
 	.items-discount{
 		margin-bottom: 40px;
 		.font( 24px, 24px, 400 );
-		color: @dark;
 	}
 
+}
+
+.item.shade-dark .items-discount, {
+	color: @light;
+}
+.item.shade-light .items-discount, {
+	color: @dark;
 }
 
 
