@@ -45,8 +45,10 @@ function itemsExist(){
 
 			$('.product-grid .item').each( function(index, val) {
 				var ribbon = $(this).find('.ribbon');
-				if( ribbon.length > 0 ){
+				var ribbonSet = false;
+				if( ribbon.length > 0 && ! ribbonSet ){
 					ribbon.appendTo( $(this).find('.items-data') );
+					ribbonSet = true;
 				}
 			});
 
