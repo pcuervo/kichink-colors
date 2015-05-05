@@ -203,27 +203,34 @@ function fillStoreDetails(name, description, logo, cover){
 
 function fillMenuCategories(categories){
 	$.each(categories, function(i, category){
-		//console.log(category);
+		console.log(category);
 		var categorySlug = convertToSlug( replaceAccents( category.name ) );
-		var menu_item_html = '<a class="[ inline-block ][ menu__item ][ js-'+categorySlug+' ]" href="#">'+category.name+'</a>';
+		var menu_item_html = '<a class="[ inline-block ][ menu__item ][ js-'+categorySlug+' ]" data-category="'+categorySlug+'" href="#">'+category.name+'</a>';
 
+		$('.js-nav .overflow-holder').append(menu_item_html);
 		if(category.subcats.length == 0){
-			$('.js-nav .overflow-holder').append(menu_item_html);
 			return true;
 		}
 
 		//Agregar subcategorías
 		var sub_nav = ' \
-			<div class="[ sub-nav opened ][ js-'+categorySlug+' ][  ]"> \
+			<div class="[ sub-nav ][ js-'+categorySlug+' ]" data-category="'+categorySlug+'"> \
 				<div class="[ overflow-holder ]"> \
 					<a href="/" class="[ inline-block ][ menu__item ][ close-menu js-close-menu ]"> \
 						<i class="icon-close"></i> \
 					</a>';
-		$.each(category.subcats, function(j, subcat){ sub_nav += '<a class="[ inline-block ][ menu__item ] href="#">'+subcat.name+'</a>'; });
+		$.each(category.subcats, function(j, subcat){
+			//var sub_nav_slug = convertToSlug( replaceAccents( category.name ) );
+			sub_nav += '<a class="[ inline-block ][ menu__item ] href="#">'+subcat.name+'</a>';
+		});
 		sub_nav += '</div></div>';
 		$('header').append(sub_nav);
 	});
 }// fillMenuCategories
+
+function openSubNav( clicked ){
+	$('.sub-nav.'+clicked).addClass('opened');
+}
 
 function closeSubNav(){
 	$('.sub-nav').removeClass('opened');

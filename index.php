@@ -89,25 +89,6 @@
 						</div> -->
 					</div><!-- overflow-holder -->
 				</nav>
-				<div class="[ sub-nav opened ][ js-bottom ]">
-					<div class="[ overflow-holder ]">
-						<a href="/" class="[ inline-block ][ menu__item ][ close-menu js-close-menu ]">
-							<i class="icon-close"></i>
-						</a><a class="[ active ][ inline-block ][ menu__item ]" href="#">
-							Shorts
-						</a><a class="[ inline-block ][ menu__item ]" href="#">
-							Skirts
-						</a><a class="[ inline-block ][ menu__item ]" href="#">
-							Jeans
-						</a><a class="[ inline-block ][ menu__item ]" href="#">
-							Shorts
-						</a><a class="[ inline-block ][ menu__item ]" href="#">
-							Skirts
-						</a><a class="[ inline-block ][ menu__item ]" href="#">
-							Jeans
-						</a>
-					</div><!-- overflow-holder -->
-				</div><!-- sub-nav -->
 			</header>
 			<div class="[ main ]">
 				<section class="[ cover ]">
@@ -258,7 +239,7 @@
 							<p class="[ text-center ]"><small>Por default tomarémos los colores dominantes de tus fotos</small></p>
 						</div><!-- modal-header -->
 						<div class="[ modal-body ]">
-							<form class="[ row ]" action="#">
+							<form class="[ row ]" action="/?edit=true" method="get">
 								<fieldset class="[ margin-bottom--large ][ columna xmall-6 ]">
 									<input type="radio"> Classy <br />
 									<img class="[ image-responsive ]" src="images/palletes/pallete-classy.jpg" alt="">
@@ -387,6 +368,11 @@
 					//console.log('click');
 					e.preventDefault();
 					closeSubNav();
+				});
+
+				$('header').on('click', '.menu__item', function(){
+					var clicked = $(this).data('category');
+					openSubNav('js-'+clicked);
 				});
 
 				$('.close-modal').on('click', function(event) {
