@@ -73,7 +73,6 @@ function applyColor(origin, destiny){
 	$(origin).each(function(){
 		color = getColor( $(this) );
 		shade = lightOrDark( '#'+color );
-		//console.log(shade);
 		$(this)
 			.closest(destiny).addClass('shade-'+shade)
 			.css('backgroundColor', '#'+color);
