@@ -18,10 +18,10 @@
 	text-shadow: @string;
 }
 
-.drop-shadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @alpha: 0.25) {
-	-webkit-box-shadow:	@x @y @blur @spread rgba(0, 0, 0, @alpha);
-	-moz-box-shadow:	@x @y @blur @spread rgba(0, 0, 0, @alpha);
-	box-shadow:		@x @y @blur @spread rgba(0, 0, 0, @alpha);
+.drop-shadow (@string) {
+	-webkit-box-shadow:	@string;
+	-moz-box-shadow:	@string;
+	box-shadow:		@string;
 }
 
 .border-radiuses (@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
@@ -154,6 +154,12 @@
 	background: -moz-linear-gradient(rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 1%, rgba(255,255,255,0) 100%);
 	background: -o-linear-gradient(rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 1%, rgba(255,255,255,0) 100%);
 	background: linear-gradient(rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 1%, rgba(255,255,255,0) 100%);
+}
+
+.ellipsis(){
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
 

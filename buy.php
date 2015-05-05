@@ -97,7 +97,7 @@
 					<section class="[ images-container ][ text-center ][ responsive-images ][ js-images-container ]">
 					</section><!-- slider -->
 					<section class="[ product__info ]">
-						<article class="[ product__buy ][ margin-bottom--large ][ text-center ][ shown--small ]">
+						<article class="[ product__buy ][ margin-bottom--large ][ text-center ]">
 							<p class="[ margin-bottom--small ]"><small>Compra segura con <a class="[ inline-block ]" href="#">Garantía Kichink!</a></small></p>
 							<h2 class="[ margin-bottom ]">$1,200</h2>
 							<a href="#" class="[ inline-block ][ button button--large button--light ]" id="buy_buton" data-id="<?php echo $item_id ?>" style="color: #e07383" >Lo quiero</a>
@@ -118,7 +118,7 @@
 									<label for="talla" class="[ margin-bottom--small ]">Talla</label><br />
 								</fieldset>
 								<fieldset class="[ columna xmall-12 medium-6 ][ margin-bottom ][ js-select-unidades ]">
-									
+
 								</fieldset>
 							</div><!-- row -->
 						</article>
@@ -129,7 +129,7 @@
 							<!-- <p class="[ text-cente">Formas de pago</p> -->
 							<p class="">Tarjeta de crédito y efectivo</p>
 						</article>
-						<article class="[ product__buy ][ margin-bottom--large ][ text-center ][ shown--small ]">
+						<article class="[ product__buy ][ margin-bottom--large ][ text-center ]">
 							<p class="[ margin-bottom--small ]"><small>Compra segura con <a class="[ inline-block ]" href="#">Garantía Kichink!</a></small></p>
 							<h2 class="[ margin-bottom ]">$1,200</h2>
 							<a href="#" class="[ inline-block ][ button button--large button--light ]" id="buy_buton" data-id="<?php echo $item_id ?>" style="color: #e07383" >Lo quiero</a>

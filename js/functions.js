@@ -73,7 +73,7 @@ function applyColor(origin, destiny){
 	$(origin).each(function(){
 		color = getColor( $(this) );
 		shade = lightOrDark( '#'+color );
-		console.log(shade);
+		//console.log(shade);
 		$(this)
 			.closest(destiny).addClass('shade-'+shade)
 			.css('backgroundColor', '#'+color);
@@ -203,45 +203,29 @@ function fillStoreDetails(name, description, logo, cover){
 
 function fillMenuCategories(categories){
 	$.each(categories, function(i, category){
-		//console.log(category);
-		var menu_item_html = '<li><a href="#">'+category.name+'</a>';
+		console.log(category);
+		var menu_item_html = '<a class="[ inline-block ][ menu__item ][ js-'+category.name+' ]" href="#">'+category.name+'</a>';
 
 		if(category.subcats.length == 0){
-			menu_item_html += '</li>';
-			$('#menu ul').append(menu_item_html);
+			$('.js-nav .overflow-holder').append(menu_item_html);
 			return true;
 		}
 
-		// Agregar subcategorías
-		menu_item_html += ' \
-				<label for="fof" class="toggle-sub" onclick="">&#9658;</label> \
-				<input type="checkbox" name="nav" id="fof" class="sub-nav-check"/> \
-				<ul id="fof-sub" class="sub-nav"> \
-					<label for="fof" class="[ toggle back ]" onclick="" title="Back">Atras</label> \
-					<li class="sub-heading">'+category.name+'</li>';
-		$.each(category.subcats, function(j, subcat){ menu_item_html += '<li><a href="#">'+subcat.name+'</a></li>'; });
-		menu_item_html += '</ul></li>';
-		$('#menu ul').append(menu_item_html);
+		//Agregar subcategorías
+		var sub_nav = ' \
+			<div class="[ sub-nav opened ][ js-'+category.name+' ][  ]"> \
+				<div class="[ overflow-holder ]"> \
+					<a href="/" class="[ inline-block ][ menu__item ][ close-menu js-close-menu ]"> \
+						<i class="icon-close"></i> \
+					</a>';
+		$.each(category.subcats, function(j, subcat){ sub_nav += '<a class="[ inline-block ][ menu__item ] href="#">'+subcat.name+'</a>'; });
+		sub_nav += '</div></div>';
+		$('header').append(sub_nav);
 	});
 }// fillMenuCategories
 
-/**
-* Show/hide related products in the single page
-**/
-function toggleRelatedProducts(clickedElement){
-	if ( $('section.product-grid-wrapper').hasClass('hide') ){
-		runMasonry('section.product-grid-wrapper .product-grid', '.item');
-		//$(clickedElement).hide();
-		$('section.product-grid-wrapper').fadeIn('fast');
-		$('section.product-grid-wrapper').removeClass('hide').addClass('open');
-		return;
-	}
-
-	if ( $('section.product-grid-wrapper').hasClass('open') ){
-		$('section.product-grid-wrapper').fadeOut('fast');
-		$('section.product-grid-wrapper').removeClass('open').addClass('hide');
-		return;
-	}
+function closeSubNav(){
+	$('.sub-nav').removeClass('opened');
 }
 
 function agregaOpcionesDeCompra(opciones){
@@ -261,16 +245,16 @@ function agregaOpcionesDeCompra(opciones){
 		}
 	});
 	$('.js-modelo').text(modelo);
-	
+
 	crearSelectTallas( tallas );
-	
+
 }// agregaOpcionesDeCompra
 
 function crearSelectTallas( tallas ){
 
 	var select_tallas = '<select name="talla" id="talla" class="[ custom-select ][ js-tallas ]">';
 	select_tallas = select_tallas + '<option data-unidades="0">Selecciona una talla</option>';
-	
+
 	$.each( tallas, function( i, opcionesCompra ) {
 		console.log(opcionesCompra);
 		select_tallas = select_tallas + '<option data-unidades="' + opcionesCompra.unidades + '" value="' + opcionesCompra.talla + '">' + opcionesCompra.talla + '</option>';
@@ -294,7 +278,7 @@ function crearSelectUnidades( unidades ){
 
 	for ( i = 1; i <= unidades; i++ )
 		select_unidades = select_unidades + '<option value="' + i + '">' + i + '</option>';
-	
+
 	select_unidades = select_unidades + '</select>';
 	$('.js-select-unidades').append(select_unidades);
 	$('.custom-select-unidades').customSelect();

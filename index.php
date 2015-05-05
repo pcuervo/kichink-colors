@@ -2,7 +2,7 @@
 	$site_url 				= 'http://www.airesdecampo.com/tienda/';
 	$store 					= new stdClass();
 	$item 					= new stdClass();
-	$store->id 				= 34837;
+	$store->id 				= 15272;
 	$store->color 			= '#e22119';
 	//Mi tu 				= 148
 	//Tony Delfinos 		= 3829
@@ -72,22 +72,10 @@
 						<img class="[ logo ][ center ]" data-color="E22119" src="#" alt="" title="Inicio" />
 					</a>
 				</h1>
-				<nav class="[ ]">
+				<nav class="[ js-nav ]">
 					<div class="[ overflow-holder ]">
 						<a href="/" class="[ active ][ inline-block ][ menu__item ]">
 							Todos
-						</a><a href="/" class="[ inline-block ][ menu__item ]">
-							Bottom
-						</a><a href="/" class="[ inline-block ][ menu__item ]">
-							Tops
-						</a><a href="/" class="[ inline-block ][ menu__item ]">
-							Footwear
-						</a><a href="/" class="[ inline-block ][ menu__item ]">
-							Shirts
-						</a><a href="/" class="[ inline-block ][ menu__item ]">
-							Misc
-						</a><a href="/" class="[ inline-block ][ menu__item ]">
-							Sweatshirts
 						</a><!-- <div class="[ columna xmall-6 ][ ][ text-right ][ menu__item ][ cart ]">
 							<a href="#" class="[ js-lang ]">
 								<i class="[ icon-lang ]"></i>
@@ -101,6 +89,25 @@
 						</div> -->
 					</div><!-- overflow-holder -->
 				</nav>
+				<div class="[ sub-nav opened ][ js-bottom ]">
+					<div class="[ overflow-holder ]">
+						<a href="/" class="[ inline-block ][ menu__item ][ close-menu js-close-menu ]">
+							<i class="icon-close"></i>
+						</a><a class="[ active ][ inline-block ][ menu__item ]" href="#">
+							Shorts
+						</a><a class="[ inline-block ][ menu__item ]" href="#">
+							Skirts
+						</a><a class="[ inline-block ][ menu__item ]" href="#">
+							Jeans
+						</a><a class="[ inline-block ][ menu__item ]" href="#">
+							Shorts
+						</a><a class="[ inline-block ][ menu__item ]" href="#">
+							Skirts
+						</a><a class="[ inline-block ][ menu__item ]" href="#">
+							Jeans
+						</a>
+					</div><!-- overflow-holder -->
+				</div><!-- sub-nav -->
 			</header>
 			<div class="[ main ]">
 				<section class="[ cover ]">
@@ -326,6 +333,12 @@
 				<!-- \********************************/ -->
 				$('.js-lang').on('click', function(){
 					changeLang('en');
+				});
+
+				$('header').on('click', '.js-close-menu', function(e){
+					console.log('click');
+					e.preventDefault();
+					closeSubNav();
 				});
 
 
