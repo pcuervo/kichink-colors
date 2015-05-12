@@ -56,7 +56,7 @@ function itemsExist(){
 				setProductImgColor( localStorage.getItem('pallete') );
 				applyColor('.product-grid .item img', '.product-grid .item');
 			}
-			
+
 		}
 
 	}, 200);
@@ -81,9 +81,16 @@ function applyColor(origin, destiny){
 		color = getColor( $(this) );
 		shade = lightOrDark( '#'+color );
 		$(this)
-			.closest(destiny).addClass('shade-'+shade)
+			.closest(destiny)
+			.removeClass('shade-light')
+			.removeClass('shade-dark')
+			.addClass('shade-'+shade)
 			.css('backgroundColor', '#'+color);
 	});
+}
+
+function applyCoverColor(color){
+	$('.cover .opacity--full').css( 'backgound-color', color );
 }
 
 /**
@@ -278,12 +285,12 @@ function setProductImgColor( pallete ){
 		}
 		$(product).find('img').attr( 'data-color', palleteColors[currentColor] );
 		currentColor++;
-		
+
 	});
 }// setProductImgColor
 
 /**
- * Gets the array of colors of a given pallete 
+ * Gets the array of colors of a given pallete
  * @param string pallete - Name of the color pallete
  * @return array colors - Colors of the pallete
 **/
