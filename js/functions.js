@@ -90,7 +90,8 @@ function applyColor(origin, destiny){
 }
 
 function applyCoverColor(color){
-	$('.cover .opacity--full').css( 'backgound-color', color );
+	console.log("'"+color+"'");
+	$('.cover .opacity--full').css( 'background-color', color );
 }
 
 /**

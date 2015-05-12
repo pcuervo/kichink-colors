@@ -95,7 +95,7 @@
 			</header>
 			<div class="[ main ]">
 				<section class="[ cover ]">
-					<div class="[ opacity--full ]" style="background-color: <?php echo $store->color; ?>"></div>
+					<div class="[ opacity--full ]"></div>
 					<div class="[ store__info ][ center-full ][ xmall-12 text-center ]">
 						<h2 class="[ store-name ]"></h2>
 						<h3 class="[ store-description ]"></h3>
@@ -392,19 +392,16 @@
 
 				$('.form-edit').submit(function(e) {
 					e.preventDefault();
-					var pallete = $('input[name="pallete"]:checked').val();
-					var cover = $('input[name="color-picker"]').val();
-
-					if ( pallete == undefined ){
-						$('.form-edit .error').append('No has seleccionado ningúna paleta');
-						return;
-					}
-
-					closeModal();
 
 					/**
 					 * Pallete
 					**/
+					var pallete = $('input[name="pallete"]:checked').val();
+					if ( pallete == undefined ){
+						$('.form-edit .error').empty().append('No has seleccionado ningúna paleta');
+						return;
+					}
+
 					localStorage.setItem( 'pallete', pallete );
 					removeDataColor();
 					setProductImgColor( localStorage.getItem('pallete') );
@@ -413,8 +410,15 @@
 					/**
 					 * cover color and opacity
 					**/
+					var cover = $('input.color-picker').val();
+					if ( cover == undefined ){
+						$('.form-edit .error').empty().append('No has seleccionado ningun color para tu cover');
+						return;
+					}
 					localStorage.setItem( 'cover', cover );
 					applyCoverColor(cover);
+
+					closeModal();
 
 				});
 
