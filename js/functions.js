@@ -210,14 +210,16 @@ function mostrarDisponibilidad(disponiblilidad_obj){
 function fillStoreDetails(name, description, logo, cover){
 	document.title = name + ' - Kichink!';
 	$('.store-name').text(name);
-	$('.store-description').text(description);
+
+	if( description !== null ) $('.store-description').text(description);
+	
 	$('.cover').css('background-image', 'url('+cover+')');
 	$('.logo').attr('src', logo);
 }// fillStoreDetails
 
 function fillMenuCategories(categories){
 	$.each(categories, function(i, category){
-		console.log(category);
+		//console.log(category);
 		var categorySlug = convertToSlug( replaceAccents( category.name ) );
 		var menu_item_html = '<a class="[ inline-block ][ menu__item ][ js-'+categorySlug+' ]" data-category="'+categorySlug+'" href="/category/' + category.id + '">'+category.name+'</a>';
 
