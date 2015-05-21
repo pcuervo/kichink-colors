@@ -9,6 +9,8 @@
 	//Tungas		 		= 6666
 	//El Shirota	 		= 34837
 	//Vicky Form	 		= 15272
+	//Light & noise	 		= 3850
+	//Varon	 				= 18029
 	$store->name 			= "ALEXIA ULIBARRI";
 	$store->description 	= "Simona FW14";
 	$store->logo 			= "images/logo-tienda.jpg";
@@ -31,7 +33,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta http-equiv="cleartype" content="on">
 		<title></title>
-		<link rel="shortcut icon" href="images/favicon.ico">
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" href="style.css">
 		<meta name="description" content="<?php echo $og_description; ?>">
 
@@ -93,10 +95,11 @@
 			</header>
 			<div class="[ main ]">
 				<section class="[ cover ]">
-					<div class="[ opacity--full opacity--30 ][ logo-color ]" style="background-color: <?php echo $store->color; ?>"></div>
-					<div class="[ store__info ][ center-full ][ xmall-12 text-center ]">
+					<div class="[ opacity--full ]"></div>
+					<div class="[ store__info ][ center-full ][ text-center ]">
 						<h2 class="[ store-name ]"></h2>
-						<h3 class="[ store-description ]"></h3>
+						<h3 class="[ store-description ][ xmall-8 medium-12 ]"></h3>
+						<a href="#" class="[ button button--dark ][ hidden--medium ][ js-show-description ]" data-element="store-description">Mostrar descripción</a>
 					</div><!-- store__info -->
 				</section><!-- cover -->
 
@@ -235,34 +238,42 @@
 						<i class="[ icon-close ]"></i>
 					</div>
 					<div class="[ modal-content ]">
-						<div class="[ modal-header ] [ border-bottom margin-bottom-small ]">
-							<h3 class="[ text-center ][ no-margin ]">Selecciona la gama de colores de tu preferencia</h3>
-							<p class="[ text-center ]"><small>Por default tomarémos los colores dominantes de tus fotos</small></p>
+						<div class="[ modal-header ][ border-bottom margin-bottom-small ][ margin-bottom ]">
+							<h3 class="[ text-center ]">Personaliza los detalles del tema</h3>
 						</div><!-- modal-header -->
 						<div class="[ modal-body ]">
 							<form class="[ form-edit ][ row ]">
-								<fieldset class="[ margin-bottom--large ][ columna xmall-6 ]">
-									<input type="radio" name="pallete" value="classy"> Classy <br />
-									<img class="[ image-responsive ]" src="images/palletes/pallete-classy.jpg" alt="">
-								</fieldset>
-								<fieldset class="[ margin-bottom--large ][ columna xmall-6 ]">
-									<input type="radio" name="pallete" value="neon"> Neon <br />
-									<img class="[ image-responsive ]" src="images/palletes/pallete-neon.jpg" alt="">
-								</fieldset>
-								<fieldset class="[ margin-bottom--large ][ columna xmall-6 ]">
-									<input type="radio" name="pallete" value="pastel"> Pastel <br />
-									<img class="[ image-responsive ]" src="images/palletes/pallete-pastel.jpg" alt="">
-								</fieldset>
-								<fieldset class="[ margin-bottom--large ][ columna xmall-6 ]">
-									<input type="radio" name="pallete" value="cold"> Cold <br />
-									<img class="[ image-responsive ]" src="images/palletes/pallete-cold.jpg" alt="">
-								</fieldset>
-								<fieldset class="[ margin-bottom--large ][ columna xmall-6 ]">
-									<input type="radio" name="pallete" value="warm"> Warm <br />
-									<img class="[ image-responsive ]" src="images/palletes/pallete-warm.jpg" alt="">
-								</fieldset>
+								<section class="[ pallete ]">
+									<h4 class="[ text-center ]">Selecciona la paleta de colores de tu preferencia</h4>
+									<fieldset class="[ margin-bottom--large ][ columna xmall-6 ]">
+										<input type="radio" name="pallete" value="classy"> Classy <br />
+										<img class="[ image-responsive ]" src="images/palletes/pallete-classy.jpg" alt="">
+									</fieldset>
+									<fieldset class="[ margin-bottom--large ][ columna xmall-6 ]">
+										<input type="radio" name="pallete" value="neon"> Neon <br />
+										<img class="[ image-responsive ]" src="images/palletes/pallete-neon.jpg" alt="">
+									</fieldset>
+									<fieldset class="[ margin-bottom--large ][ columna xmall-6 ]">
+										<input type="radio" name="pallete" value="pastel"> Pastel <br />
+										<img class="[ image-responsive ]" src="images/palletes/pallete-pastel.jpg" alt="">
+									</fieldset>
+									<fieldset class="[ margin-bottom--large ][ columna xmall-6 ]">
+										<input type="radio" name="pallete" value="cold"> Cold <br />
+										<img class="[ image-responsive ]" src="images/palletes/pallete-cold.jpg" alt="">
+									</fieldset>
+									<fieldset class="[ margin-bottom--large ][ columna xmall-6 ]">
+										<input type="radio" name="pallete" value="warm"> Warm <br />
+										<img class="[ image-responsive ]" src="images/palletes/pallete-warm.jpg" alt="">
+									</fieldset>
+								</section>
 								<div class="[ clear ]"></div>
-
+								<section class="[ pallete ]">
+									<h4 class="[ text-center ]">Selecciona el color y la opacidad que se le aplicará tu cover photo</h4>
+									<fieldset class="[ margin-bottom--large ][ columna xmall-6 ]">
+										<input class="[ color-picker ]" type="hidden" name="color-picker">
+									</fieldset>
+								</section>
+								<div class="[ clear ]"></div>
 								<div class="[ text-center ]">
 									<div class="[ error ][ text-center ][ margin-bottom ]"></div>
 									<button class="[ button button--hollow button--dark ]">
@@ -371,22 +382,57 @@
 					closeModal();
 				});
 
+				$('.color-picker').spectrum({
+					color: '#f00',
+					preferredFormat: 'rgba',
+					change: function(color) {
+						$('.color-picker').val(color.toRgbString());
+					},
+					allowEmpty:true,
+					showAlpha: true
+				});
+
 				$('.form-edit').submit(function(e) {
 					e.preventDefault();
-					var pallete = $('input[name="pallete"]:checked').val();
 
+					/**
+					 * Pallete
+					**/
+					var pallete = $('input[name="pallete"]:checked').val();
 					if ( pallete == undefined ){
-						$('.form-edit .error').append('No has seleccionado ningúna paleta');
+						$('.form-edit .error').empty().append('No has seleccionado ningúna paleta');
 						return;
 					}
 
-					closeModal();
 					localStorage.setItem( 'pallete', pallete );
-
 					removeDataColor();
 					setProductImgColor( localStorage.getItem('pallete') );
-					//applyColor('.product-grid .item img', '.product-grid .item');
+					applyColor('.product-grid .item img', '.product-grid .item');
 
+					/**
+					 * cover color and opacity
+					**/
+					var cover = $('input.color-picker').val();
+					if ( cover == undefined ){
+						$('.form-edit .error').empty().append('No has seleccionado ningun color para tu cover');
+						return;
+					}
+					localStorage.setItem( 'cover', cover );
+					applyCoverColor(cover);
+
+					closeModal();
+
+				});
+
+				$('.js-show-description').on('click', function(){
+					if ( $('.store-description').hasClass('opened') ){
+						$('.js-show-description').text('Mostrar descripción');
+					} else {
+						$('.js-show-description').text('Ocultar descripción');
+					}
+
+					var element = $(this).data('element');
+					showElement('.'+element);
 				});
 
 			});

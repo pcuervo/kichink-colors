@@ -98,7 +98,6 @@
 					</section><!-- slider -->
 					<section class="[ product__info ]">
 						<article class="[ product__buy ][ margin-bottom--large ][ text-center ]">
-							<p class="[ margin-bottom--small ]"><small>Compra segura con <a class="[ inline-block ]" href="#">Garantía Kichink!</a></small></p>
 							<h2 class="[ margin-bottom ]">$1,200</h2>
 							<a href="#" class="[ inline-block ][ button button--large button--light ]" id="buy_buton" data-id="<?php echo $item_id ?>" style="color: #e07383" >Lo quiero</a>
 						</article>
