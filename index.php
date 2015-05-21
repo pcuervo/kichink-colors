@@ -2,7 +2,7 @@
 	$site_url 				= 'http://www.airesdecampo.com/tienda/';
 	$store 					= new stdClass();
 	$item 					= new stdClass();
-	$store->id 				= 148;
+	$store->id 				= 18029;
 	$store->color 			= '#e22119';
 	//Mi tu 				= 148
 	//Tony Delfinos 		= 3829
@@ -340,6 +340,7 @@
 					url: "https://www.kichink.com/api/stores/get_store_details",
 					success: function(data) {
 						var ajax_request = jQuery.parseJSON(data.toString());
+						console.log( ajax_request );
 						fillStoreDetails(ajax_request.data.name, ajax_request.data.description, ajax_request.data.logo, ajax_request.data.header);
 						fillMenuCategories(ajax_request.data.categories);
 					}

@@ -209,9 +209,9 @@ function fillStoreDetails(name, description, logo, cover){
 
 function fillMenuCategories(categories){
 	$.each(categories, function(i, category){
-		//console.log(category);
+		console.log(category);
 		var categorySlug = convertToSlug( replaceAccents( category.name ) );
-		var menu_item_html = '<a class="[ inline-block ][ menu__item ][ js-'+categorySlug+' ]" data-category="'+categorySlug+'" href="#">'+category.name+'</a>';
+		var menu_item_html = '<a class="[ inline-block ][ menu__item ][ js-'+categorySlug+' ]" data-category="'+categorySlug+'" href="/category/' + category.id + '">'+category.name+'</a>';
 
 		$('.js-nav .overflow-holder').append(menu_item_html);
 		if(category.subcats.length == 0){

@@ -1,7 +1,7 @@
 <?php
 	$item_id = $_GET["id"];
 	$store 					= new stdClass();
-	$store->id 				= 18609;
+	$store->id 				= 15272;
 	$store->name 			= "ALEXIA ULIBARRI";
 	$store->description 	= "Simona FW14";
 	$store->logo 			= "images/logo-tienda.jpg";
@@ -290,6 +290,7 @@
 			url: "https://www.kichink.com/api/stores/get_store_details",
 			success: function(data) {
 				var ajax_request = jQuery.parseJSON(data.toString());
+				
 				fillStoreDetails(ajax_request.data.name, ajax_request.data.description, ajax_request.data.logo, ajax_request.data.header);
 				fillMenuCategories(ajax_request.data.categories);
 			}
