@@ -12,7 +12,7 @@
 
 		/*------------------------------------*\
 			#Triggered events
-		\*---------f---------------------------*/
+		\*------------------------------------*/
 
 
 
@@ -242,6 +242,10 @@ function fillMenuCategories(categories){
 	});
 }// fillMenuCategories
 
+function showElement( element ){
+	$(element).toggleClass('opened');
+}
+
 function openSubNav( clicked ){
 	$('.sub-nav.'+clicked).addClass('opened');
 }
@@ -363,7 +367,6 @@ var slug = text.toLowerCase().replace(/[^\w ]+/g,'').replace(/ +/g,'-');
 }// convertToSlug
 
 function agregaOpcionesDeCompra(opciones){
-
 	var tallas = [];
 	var unidades = [];
 	var modelo;

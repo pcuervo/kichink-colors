@@ -2,7 +2,7 @@
 	$site_url 				= 'http://www.airesdecampo.com/tienda/';
 	$store 					= new stdClass();
 	$item 					= new stdClass();
-	$store->id 				= 3829;
+	$store->id 				= 34837;
 	$store->color 			= '#000';
 	//Mi tu 				= 148
 	//Tony Delfinos 		= 3829
@@ -96,9 +96,10 @@
 			<div class="[ main ]">
 				<section class="[ cover ]">
 					<div class="[ opacity--full ]"></div>
-					<div class="[ store__info ][ center-full ][ xmall-12 text-center ]">
+					<div class="[ store__info ][ center-full ][ text-center ]">
 						<h2 class="[ store-name ]"></h2>
-						<h3 class="[ store-description ]"></h3>
+						<h3 class="[ store-description ][ xmall-8 medium-12 ]"></h3>
+						<a href="#" class="[ button button--dark ][ hidden--medium ][ js-show-description ]" data-element="store-description">Mostrar descripción</a>
 					</div><!-- store__info -->
 				</section><!-- cover -->
 
@@ -420,6 +421,17 @@
 
 					closeModal();
 
+				});
+
+				$('.js-show-description').on('click', function(){
+					if ( $('.store-description').hasClass('opened') ){
+						$('.js-show-description').text('Mostrar descripción');
+					} else {
+						$('.js-show-description').text('Ocultar descripción');
+					}
+
+					var element = $(this).data('element');
+					showElement('.'+element);
 				});
 
 			});
