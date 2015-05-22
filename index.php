@@ -2,7 +2,7 @@
 	$site_url 				= 'http://www.airesdecampo.com/tienda/';
 	$store 					= new stdClass();
 	$item 					= new stdClass();
-	$store->id 				= 18029;
+	$store->id 				= 15272;
 	$store->color 			= '#e22119';
 	//Mi tu 				= 148
 	//Tony Delfinos 		= 3829
@@ -222,7 +222,6 @@
 						<span class="rrssb-text">pocket</span>
 					</a>
 				</li>
-
 			</ul>
 			<div class="[ wrapper ]">
 				<p class="[ text-center ]">Esta tienda en línea está protegida y encriptada con SSL de 256 bits y es operada por<img class="[ align-middle ]" src="https://www.kichink.com/v2/themes/img/logo_powered_by_kichink.png" alt=""></p>
@@ -285,8 +284,6 @@
 					</div><!-- modal-content -->
 				</div><!-- modal -->
 			</div><!-- modal-wrapper -->
-
-
 		</footer>
 
 		<!-- Scripts de Kichink! -->

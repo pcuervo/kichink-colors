@@ -212,6 +212,10 @@ function fillStoreDetails(name, description, logo, cover){
 	$('.store-name').text(name);
 
 	if( description !== null ) $('.store-description').text(description);
+	else {
+		$('.js-show-description').removeClass('hidden--medium');
+		$('.js-show-description').hide();
+	} 
 	
 	$('.cover').css('background-image', 'url('+cover+')');
 	$('.logo').attr('src', logo);
